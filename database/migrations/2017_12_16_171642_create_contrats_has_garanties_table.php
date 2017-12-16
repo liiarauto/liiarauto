@@ -14,7 +14,7 @@ class CreateContratsHasGarantiesTable extends Migration {
 	{
 		Schema::create('contrats_has_garanties', function(Blueprint $table)
 		{
-			$table->integer('id')->primary();
+			$table->integer('id', true);
 			$table->integer('contrats_id')->index('fk_contrats_has_garanties_contrats1_idx');
 			$table->integer('garanties_id')->index('fk_contrats_has_garanties_garanties1_idx');
 			$table->timestamps();

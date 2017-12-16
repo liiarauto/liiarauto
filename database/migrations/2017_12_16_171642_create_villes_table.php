@@ -14,7 +14,7 @@ class CreateVillesTable extends Migration {
 	{
 		Schema::create('villes', function(Blueprint $table)
 		{
-			$table->integer('id')->primary();
+			$table->integer('id', true);
 			$table->string('libelle', 45);
 			$table->integer('localites_id')->index('fk_villes_localites1_idx');
 			$table->timestamps();

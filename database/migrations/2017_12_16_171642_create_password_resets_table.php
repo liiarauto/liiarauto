@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateEnergiesTable extends Migration {
+class CreatePasswordResetsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,11 +12,11 @@ class CreateEnergiesTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('energies', function(Blueprint $table)
+		Schema::create('password_resets', function(Blueprint $table)
 		{
-			$table->integer('id')->primary();
-			$table->string('libelle', 45)->unique('libelle_UNIQUE');
-			$table->timestamps();
+			$table->string('email')->index();
+			$table->string('token');
+			$table->dateTime('created_at')->nullable();
 		});
 	}
 
@@ -28,7 +28,7 @@ class CreateEnergiesTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('energies');
+		Schema::drop('password_resets');
 	}
 
 }
