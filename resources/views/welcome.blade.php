@@ -79,7 +79,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    LiiarAuto
+                    LiiarAuto_ V1
                 </div>
 
                 <div class="links">
