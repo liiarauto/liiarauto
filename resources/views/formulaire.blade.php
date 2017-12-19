@@ -117,6 +117,7 @@ Facebook: 		https://www.facebook.com/fh5co
             </div>
         </header>
 
+        {!! Form::open(['url' => 'foo/bar']) !!}
         <div class="container">
             <div class="row">
                 <div class="panel panel-default col-md-8 col-md-offset-2">
@@ -124,19 +125,17 @@ Facebook: 		https://www.facebook.com/fh5co
                         <h3 class="panel-title">Le Contrat</h3>
                     </div>
                     <div class="panel-body">
-                        <form action="" method="post">
-
                             <div class="form-group">
                                 <label for="date">Date de prise d'effet</label>
                                 <div class="input-group col-md-12">
-                                    <input type="date" class="form-control" placeholder="Username" aria-describedby="sizing-addon1">
+                                    <input name="date_effet" type="date" class="form-control" placeholder="Username" aria-describedby="sizing-addon1">
                                 </div>
 
                             </div>
                             <div class="form-group">
                                 <label for="date">Périodicité</label>
                                 <div class="input-group">
-                                    <select name="periode" id="" class="form-control">
+                                    <select name="periodicite" id="" class="form-control">
                                         <option value="">Annuelle</option>
                                         <option value="">Mensuelle</option>
                                         <option value="">Trimestrielle</option>
@@ -144,8 +143,6 @@ Facebook: 		https://www.facebook.com/fh5co
                                     </select>
                                 </div>
                             </div>
-
-                        </form>
                     </div>
                 </div>
             </div>
@@ -162,7 +159,7 @@ Facebook: 		https://www.facebook.com/fh5co
                                 <div class="form-group">
                                     <div class="input-group">
                                         <span class="input-group-addon">
-                                            <input type="checkbox" aria-label="..." checked>
+                                            <input name="g_rc" type="checkbox" aria-label="..." checked>
                                         </span>
                                         <input type="text" class="form-control" value="Responsabilité civile" disabled>
                                     </div>
@@ -251,12 +248,11 @@ Facebook: 		https://www.facebook.com/fh5co
                         <h3 class="panel-title">Le Véhicule</h3>
                     </div>
                     <div class="panel-body">
-                        <form action="" method="post">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="ivplate">Immatriculation du véhicule</label>
                                     <div class="input-group col-md-12">
-                                        <input type="text" class="form-control ivplate" placeholder="" aria-describedby="sizing-addon1">
+                                        <input name="immatriculation" type="text" class="form-control ivplate">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -272,13 +268,13 @@ Facebook: 		https://www.facebook.com/fh5co
                                 <div class="form-group">
                                     <label for="number">Nombre de place assises</label>
                                     <div class="input-group col-md-12">
-                                        <input type="date" class="form-control number" placeholder="" aria-describedby="sizing-addon1">
+                                        <input name="nombre_places_assises" type="date" class="form-control number">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="date">Date de prenière mise en circulation</label>
                                     <div class="input-group col-md-12">
-                                        <input type="date" class="form-control ivplate" placeholder="" aria-describedby="sizing-addon1">
+                                        <input name="date_premiere_mise_en_circulation" type="date" class="form-control ivplate">
                                     </div>
                                 </div>
                             </div>
@@ -320,7 +316,7 @@ Facebook: 		https://www.facebook.com/fh5co
                                 <div class="form-group">
                                     <div class="input-group col-md-12">
                                         <label for="energie">Energie</label>
-                                        <select name="energie" id="" class="form-control">
+                                        <select name="energie" class="form-control">
                                             <option value="">Essence</option>
                                             <option value="">Diesel</option>
                                         </select>
@@ -329,7 +325,7 @@ Facebook: 		https://www.facebook.com/fh5co
                                 <div class="form-group">
                                     <div class="input-group col-md-12">
                                         <label for="zone">Zone de circulaion</label>
-                                        <select name="zone" id="" class="form-control">
+                                        <select name="zone" class="form-control">
                                             <option value="">Zone 1</option>
                                             <option value="">Zone 2</option>
                                             <option value="">Zone 3</option>
@@ -337,8 +333,6 @@ Facebook: 		https://www.facebook.com/fh5co
                                     </div>
                                 </div>
                             </div>
-
-                        </form>
                     </div>
                 </div>
             </div>
@@ -350,7 +344,6 @@ Facebook: 		https://www.facebook.com/fh5co
                         <h3 class="panel-title">Profil de l'assuré</h3>
                     </div>
                     <div class="panel-body">
-                        <form action="" method="post">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <div class="input-group col-md-12">
@@ -376,7 +369,7 @@ Facebook: 		https://www.facebook.com/fh5co
                                 <div class="form-group">
                                     <div class="input-group col-md-12">
                                         <label for="date">Date de naissance</label>
-                                        <input type="date" name="date_de_naissance" id="" class="form-control" />
+                                        <input type="date" name="date_de_naissance" class="form-control" />
                                     </div>
                                 </div>
                             </div>
@@ -384,19 +377,19 @@ Facebook: 		https://www.facebook.com/fh5co
                                 <div class="form-group">
                                     <div class="input-group col-md-12">
                                         <label for="tel">Téléphone</label>
-                                        <input type="tel" class="form-control" placeholder="" aria-describedby="sizing-addon1">
+                                        <input name="tel" type="tel" class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="input-group col-md-12">
                                         <label for="email">Email</label>
-                                        <input type="email" class="form-control" placeholder="" aria-describedby="sizing-addon1">
+                                        <input name="email" type="email" class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="input-group col-md-12">
-                                        <label for="sexe">Profession</label>
-                                        <select name="sexe" id="" class="form-control">
+                                        <label for="profession">Profession</label>
+                                        <select name="profession" id="" class="form-control">
                                             <option value="">Agent commercial</option>
                                             <option value="">Agent de recouvrement</option>
                                             <option value="">Agriculteur</option>
@@ -406,19 +399,17 @@ Facebook: 		https://www.facebook.com/fh5co
                                 <div class="form-group">
                                     <div class="input-group col-md-12">
                                         <label for="date">Date de délivrance du permis</label>
-                                        <input type="date" name="date_du_permis" id="" class="form-control" />
+                                        <input type="date" name="date_delivrance_permis" id="" class="form-control" />
                                     </div>
                                 </div>
                             </div>
-
-                        </form>
                     </div>
                 </div>
                 <div class="panel panel-default col-md-8 col-md-offset-2">
                     <div class="panel-heading">Termes du contrat</div>
                     <div class="panel-body">
                         <div class="warning">
-                            <input type="checkbox" name="" id="">  J'accepte <a href="http://">les termes du contrat</a> 
+                            <input type="checkbox" name="agree">  J'accepte <a href="http://">les termes du contrat</a> 
                         </div>
                             <button type="submit" class="btn btn-primary pull-right">Souscrire</button>
                     </div>
@@ -427,7 +418,7 @@ Facebook: 		https://www.facebook.com/fh5co
                 </div>
             </div>
         </div>
-
+    {!! Form::close() !!}
 
         <footer id="fh5co-footer" role="contentinfo">
 

@@ -15,6 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::any('assureurs', function () {
+Route::any('formulaire', function () {
     return view('formulaire');
 });
