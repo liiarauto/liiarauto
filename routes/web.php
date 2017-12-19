@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::any('assureurs', function () {
+    return view('formulaire');
+});

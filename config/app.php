@@ -166,6 +166,7 @@ return [
         Way\Generators\GeneratorsServiceProvider::class,
         Xethron\MigrationsGenerator\MigrationsGeneratorServiceProvider::class,
         Krlove\EloquentModelGenerator\Provider\GeneratorServiceProvider::class,
+        MaddHatter\ViewGenerator\ServiceProvider::class,
 
         /*
          * Package Service Providers...
