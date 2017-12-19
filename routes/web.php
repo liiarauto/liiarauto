@@ -12,9 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
-Route::any('formulaire', function () {
-    return view('formulaire');
+Route::get('domaines', function () {
+    return view('domaines');
 });
+
+Route::resource('formulaire', 'FormulaireController');

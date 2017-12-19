@@ -9,7 +9,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Estate &mdash; Free HTML5 Bootstrap Website Template by FreeHTML5.co</title>
+    <title>SIIN - Auto</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Free HTML5 Website Template by FreeHTML5.co" />
     <meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive"
@@ -72,6 +72,9 @@ Facebook: 		https://www.facebook.com/fh5co
             margin: 50px;
             border-radius: 10px;
         }
+        #fh5co-page{
+            background-color:#dfdddd !important;
+        }
     </style>
 
 </head>
@@ -87,20 +90,18 @@ Facebook: 		https://www.facebook.com/fh5co
                 <div class="row">
                     <div class="header-inner">
                         <h1>
-                            <a href="index.html">SII
-                                <span>N.</span>
-                            </a>
+                            <a href="{{url('/')}}">SII<span>N.</span></a>
                         </h1>
                         <nav role="navigation">
                             <ul>
                                 <li>
+                                    <a href="{{url('/')}}">Accueil</a>
+                                </li>
+                                <li>
+                                    <a href="{{url('domaines')}}">Assureurs</a>
+                                </li>
+                                <li>
                                     <a href="buy.html">Services</a>
-                                </li>
-                                <li>
-                                    <a href="rent.html">Assureurs</a>
-                                </li>
-                                <li>
-                                    <a href="properties.html">Properties</a>
                                 </li>
                                 <li class="call">
                                     <a href="tel://123456789">
@@ -117,95 +118,87 @@ Facebook: 		https://www.facebook.com/fh5co
             </div>
         </header>
 
-        {!! Form::open(['url' => 'foo/bar']) !!}
+        {!! Form::open(['url' => 'formulaire']) !!}
         <div class="container">
             <div class="row">
-                <div class="panel panel-default col-md-8 col-md-offset-2">
+                <div class="panel panel-default col-md-8 col-md-offset-2 animate-box" data-animate-effect="fadeIn">
                     <div class="panel-heading">
                         <h3 class="panel-title">Le Contrat</h3>
                     </div>
                     <div class="panel-body">
-                            <div class="form-group">
-                                <label for="date">Date de prise d'effet</label>
-                                <div class="input-group col-md-12">
-                                    <input name="date_effet" type="date" class="form-control" placeholder="Username" aria-describedby="sizing-addon1">
-                                </div>
+                        <div class="form-group">
+                            <label for="date">Date de prise d'effet</label>
+                            <div class="input-group col-md-12">
+                                <input name="contrat[date_effet]" type="date" class="form-control" placeholder="Username" aria-describedby="sizing-addon1">
+                            </div>
 
+                        </div>
+                        <div class="form-group">
+                            <label for="date">Périodicité</label>
+                            <div class="input-group">
+                                <select name="contrat[periodicite]" id="" class="form-control">
+                                    <option value="1">Annuelle</option>
+                                    <option value="2">Mensuelle</option>
+                                    <option value="3">Trimestrielle</option>
+                                    <option value="4">Semestrielle</option>
+                                </select>
                             </div>
-                            <div class="form-group">
-                                <label for="date">Périodicité</label>
-                                <div class="input-group">
-                                    <select name="periodicite" id="" class="form-control">
-                                        <option value="">Annuelle</option>
-                                        <option value="">Mensuelle</option>
-                                        <option value="">Trimestrielle</option>
-                                        <option value="">Semestrielle</option>
-                                    </select>
-                                </div>
-                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="container">
             <div class="row">
-                <div class="panel panel-default col-md-8 col-md-offset-2">
+                <div class="panel panel-default col-md-8 col-md-offset-2 animate-box" data-animate-effect="fadeIn">
                     <div class="panel-heading">
                         <h3 class="panel-title">Les Garanties</h3>
                     </div>
                     <div class="panel-body">
                         <div class="row">
-                            <div class="col-lg-3">
+                            <div class="col-lg-6">
                                 <div class="form-group">
                                     <div class="input-group">
                                         <span class="input-group-addon">
-                                            <input name="g_rc" type="checkbox" aria-label="..." checked>
+                                            <input name="garantie[rc]" type="checkbox" class="bg-blue" checked disabled>
+                                            <input name="garantie[rc]" type="hidden" value="on">
                                         </span>
                                         <input type="text" class="form-control" value="Responsabilité civile" disabled>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-3">
+                            <div class="col-lg-6">
                                 <div class="form-group">
                                     <div class="input-group">
                                         <span class="input-group-addon">
-                                            <input type="checkbox" aria-label="...">
+                                            <input name="garantie[vol]" type="checkbox" aria-label="...">
                                         </span>
-                                        <input type="text" class="form-control" value="Responsabilité civile" disabled>
+                                        <input type="text" class="form-control" value="Vol" disabled>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-3">
+                            <div class="col-lg-6">
                                 <div class="form-group">
                                     <div class="input-group">
                                         <span class="input-group-addon">
-                                            <input type="checkbox" aria-label="...">
+                                            <input name="garantie[bris_glace]" type="checkbox" aria-label="...">
                                         </span>
-                                        <input type="text" class="form-control" value="Responsabilité civile" disabled>
+                                        <input type="text" class="form-control" value="Bris de glace" disabled>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-3">
+                            <div class="col-lg-6">
                                 <div class="form-group">
                                     <div class="input-group">
                                         <span class="input-group-addon">
-                                            <input type="checkbox" aria-label="...">
+                                            <input name="garantie[vol_main_armee]" type="checkbox" aria-label="...">
                                         </span>
-                                        <input type="text" class="form-control" value="Responsabilité civile" disabled>
+                                        <input type="text" class="form-control" value="Vol à mains armées" disabled>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-3">
-                                <div class="form-group">
-                                    <div class="input-group">
-                                        <span class="input-group-addon">
-                                            <input type="checkbox" aria-label="...">
-                                        </span>
-                                        <input type="text" class="form-control" value="Responsabilité civile" disabled>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3">
+                            {{--
+                            <div class="col-lg-6">
                                 <div class="form-group">
                                     <div class="input-group">
                                         <span class="input-group-addon">
@@ -215,7 +208,7 @@ Facebook: 		https://www.facebook.com/fh5co
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-3">
+                            <div class="col-lg-6">
                                 <div class="form-group">
                                     <div class="input-group">
                                         <span class="input-group-addon">
@@ -225,7 +218,7 @@ Facebook: 		https://www.facebook.com/fh5co
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-3">
+                            <div class="col-lg-6">
                                 <div class="form-group">
                                     <div class="input-group">
                                         <span class="input-group-addon">
@@ -235,6 +228,16 @@ Facebook: 		https://www.facebook.com/fh5co
                                     </div>
                                 </div>
                             </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <input type="checkbox" aria-label="...">
+                                        </span>
+                                        <input type="text" class="form-control" value="Responsabilité civile" disabled>
+                                    </div>
+                                </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
@@ -243,182 +246,183 @@ Facebook: 		https://www.facebook.com/fh5co
 
         <div class="container">
             <div class="row">
-                <div class="panel panel-default col-md-8 col-md-offset-2">
+                <div class="panel panel-default col-md-8 col-md-offset-2 animate-box" data-animate-effect="fadeIn">
                     <div class="panel-heading">
                         <h3 class="panel-title">Le Véhicule</h3>
                     </div>
                     <div class="panel-body">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="ivplate">Immatriculation du véhicule</label>
-                                    <div class="input-group col-md-12">
-                                        <input name="immatriculation" type="text" class="form-control ivplate">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="input-group col-md-12">
-                                        <label for="categorie">Catégorie/Usage</label>
-                                        <select name="categorie" id="" class="form-control">
-                                            <option value="">Promenade et affaires</option>
-                                            <option value="">Location</option>
-                                            <option value="">Véhicules de société</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="number">Nombre de place assises</label>
-                                    <div class="input-group col-md-12">
-                                        <input name="nombre_places_assises" type="date" class="form-control number">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="date">Date de prenière mise en circulation</label>
-                                    <div class="input-group col-md-12">
-                                        <input name="date_premiere_mise_en_circulation" type="date" class="form-control ivplate">
-                                    </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="ivplate">Immatriculation du véhicule</label>
+                                <div class="input-group col-md-12">
+                                    <input name="vehicule[immatriculation]" type="text" class="form-control ivplate">
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="ivplate">Marque</label>
-                                    <div class="input-group col-md-12">
-                                        <label for="marque"></label>
-                                        <select name="marque" id="" class="form-control">
-                                            <option value="">Mercedes</option>
-                                            <option value="">Toyota</option>
-                                            <option value="">BMW</option>
-                                            <option value="">Audi</option>
-                                            <option value="">Dacia</option>
-                                            <option value="">Ford</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="input-group col-md-12">
-                                        <label for="puissance">Puissqnce fiscale</label>
-                                        <select name="puissance" id="" class="form-control">
-                                            <option value="">1 CV</option>
-                                            <option value="">2 CV</option>
-                                            <option value="">3 CV</option>
-                                            <option value="">4 CV</option>
-                                            <option value="">5 CV</option>
-                                            <option value="">6 CV</option>
-                                            <option value="">7 CV</option>
-                                            <option value="">8 CV</option>
-                                            <option value="">9 CV</option>
-                                            <option value="">10 CV</option>
-                                            <option value="">11 CV</option>
-                                            <option value="">12 CV</option>
-                                            <option value="">+ de 12 CV</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="input-group col-md-12">
-                                        <label for="energie">Energie</label>
-                                        <select name="energie" class="form-control">
-                                            <option value="">Essence</option>
-                                            <option value="">Diesel</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="input-group col-md-12">
-                                        <label for="zone">Zone de circulaion</label>
-                                        <select name="zone" class="form-control">
-                                            <option value="">Zone 1</option>
-                                            <option value="">Zone 2</option>
-                                            <option value="">Zone 3</option>
-                                        </select>
-                                    </div>
+                            <div class="form-group">
+                                <div class="input-group col-md-12">
+                                    <label for="categorie">Catégorie/Usage</label>
+                                    <select name="vehicule[categorie]" id="" class="form-control">
+                                        <option value="1">Promenade et affaires</option>
+                                        <option value="2">Location</option>
+                                        <option value="3">Véhicules de société</option>
+                                    </select>
                                 </div>
                             </div>
+                            <div class="form-group">
+                                <label for="number">Nombre de place assises</label>
+                                <div class="input-group col-md-12">
+                                    <input name="vehicule[nombre_places_assises]" type="number" class="form-control number">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="date">Date de prenière mise en circulation</label>
+                                <div class="input-group col-md-12">
+                                    <input name="vehicule[date_premiere_mise_circulation]" type="date" class="form-control ivplate">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="ivplate">Marque</label>
+                                <div class="input-group col-md-12">
+                                    <label for="marque"></label>
+                                    <select name="vehicule[marque]" id="" class="form-control">
+                                        <option value="Mercrdes">Mercedes</option>
+                                        <option value="Toyota">Toyota</option>
+                                        <option value="BMW">BMW</option>
+                                        <option value="Audi">Audi</option>
+                                        <option value="Dacia">Dacia</option>
+                                        <option value="Ford">Ford</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group col-md-12">
+                                    <label for="puissance">Puissqnce fiscale</label>
+                                    <select name="vehicule[puissance]" id="" class="form-control">
+                                        <option value="1">1 CV</option>
+                                        <option value="2">2 CV</option>
+                                        <option value="3">3 CV</option>
+                                        <option value="4">4 CV</option>
+                                        <option value="5">5 CV</option>
+                                        <option value="6">6 CV</option>
+                                        <option value="7">7 CV</option>
+                                        <option value="8">8 CV</option>
+                                        <option value="9">9 CV</option>
+                                        <option value="10">10 CV</option>
+                                        <option value="12">11 CV</option>
+                                        <option value="13">12 CV</option>
+                                        <option value="14">+ de 12 CV</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group col-md-12">
+                                    <label for="vehicule[energie]">Energie</label>
+                                    <select name="vehicule[energie]" class="form-control">
+                                        <option value="1">Essence</option>
+                                        <option value="2">Diesel</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group col-md-12">
+                                    <label for="zone">Zone de circulaion</label>
+                                    <select name="vehicule[zone]" class="form-control">
+                                        <option value="1">Zone 1</option>
+                                        <option value="2">Zone 2</option>
+                                        <option value="3">Zone 3</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="container">
             <div class="row">
-                <div class="panel panel-default col-md-8 col-md-offset-2">
+                <div class="panel panel-default col-md-8 col-md-offset-2 animate-box" data-animate-effect="fadeIn">
                     <div class="panel-heading">
                         <h3 class="panel-title">Profil de l'assuré</h3>
                     </div>
                     <div class="panel-body">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <div class="input-group col-md-12">
-                                        <label for="firstname">Nom</label>
-                                        <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon1">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="input-group col-md-12">
-                                        <label for="lastname">Prenom</label>
-                                        <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon1">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="input-group col-md-12">
-                                        <label for="sexe">Sexe</label>
-                                        <select name="sexe" id="" class="form-control">
-                                            <option value="m">Homme</option>
-                                            <option value="f">Femme</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="input-group col-md-12">
-                                        <label for="date">Date de naissance</label>
-                                        <input type="date" name="date_de_naissance" class="form-control" />
-                                    </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="input-group col-md-12">
+                                    <label for="firstname">Nom</label>
+                                    <input name="souscripteur[nom]" type="text" class="form-control firstname">
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <div class="input-group col-md-12">
-                                        <label for="tel">Téléphone</label>
-                                        <input name="tel" type="tel" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="input-group col-md-12">
-                                        <label for="email">Email</label>
-                                        <input name="email" type="email" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="input-group col-md-12">
-                                        <label for="profession">Profession</label>
-                                        <select name="profession" id="" class="form-control">
-                                            <option value="">Agent commercial</option>
-                                            <option value="">Agent de recouvrement</option>
-                                            <option value="">Agriculteur</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="input-group col-md-12">
-                                        <label for="date">Date de délivrance du permis</label>
-                                        <input type="date" name="date_delivrance_permis" id="" class="form-control" />
-                                    </div>
+                            <div class="form-group">
+                                <div class="input-group col-md-12">
+                                    <label for="lastname">Prenom</label>
+                                    <input name="souscripteur[prenom]" type="text" class="form-control lastname">
                                 </div>
                             </div>
+                            <div class="form-group">
+                                <div class="input-group col-md-12">
+                                    <label for="sexe">Sexe</label>
+                                    <select name="souscripteur[sexe]" id="" class="form-control">
+                                        <option value="m">Homme</option>
+                                        <option value="f">Femme</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group col-md-12">
+                                    <label for="date">Date de naissance</label>
+                                    <input type="date" name="souscripteur[date_de_naissance]" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="input-group col-md-12">
+                                    <label for="tel">Téléphone</label>
+                                    <input name="souscripteur[tel]" type="tel" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group col-md-12">
+                                    <label for="email">Email</label>
+                                    <input name="souscripteur[email]" type="email" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group col-md-12">
+                                    <label for="profession">Profession</label>
+                                    <select name="souscripteur[profession]" id="" class="form-control">
+                                        <option value="Agent commercial">Agent commercial</option>
+                                        <option value="Agent de recouvrement">Agent de recouvrement</option>
+                                        <option value="Agriculteur">Agriculteur</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group col-md-12">
+                                    <label for="date">Date de délivrance du permis</label>
+                                    <input type="date" name="souscripteur[date_delivrance_permis]" id="" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="panel panel-default col-md-8 col-md-offset-2">
+                <div class="panel panel-default col-md-8 col-md-offset-2 animate-box" data-animate-effect="fadeIn">
                     <div class="panel-heading">Termes du contrat</div>
                     <div class="panel-body">
                         <div class="warning">
-                            <input type="checkbox" name="agree">  J'accepte <a href="http://">les termes du contrat</a> 
+                            <input type="checkbox" name="agree"> J'accepte
+                            <a href="http://">les termes du contrat</a>
                         </div>
-                            <button type="submit" class="btn btn-primary pull-right">Souscrire</button>
+                        <button type="submit" class="btn btn-primary pull-right">Souscrire</button>
                     </div>
                 </div>
                 <div class="col-md-8 col-md-offset-2">
                 </div>
             </div>
         </div>
-    {!! Form::close() !!}
+        {!! Form::close() !!}
 
         <footer id="fh5co-footer" role="contentinfo">
 
@@ -525,7 +529,7 @@ Facebook: 		https://www.facebook.com/fh5co
 
     <!-- MAIN JS -->
     <script src="{{asset('js/main.js')}}"></script>
-    <script src="{{asset('js/app.js')}}"></script>
+    {{--  <script src="{{asset('js/app.js')}}"></script>  --}}
 
 </body>
 
