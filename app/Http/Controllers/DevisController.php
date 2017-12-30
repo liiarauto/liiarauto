@@ -14,55 +14,55 @@ class DevisController extends Controller
                 case 1:
                     if ($energie=="E")
                     {
-                        if ($puissance<=1 && $puissance<=2){return 58675;}
-                        if ($puissance<=3 && $puissance<=6){return 66885;}
-                        if ($puissance<=7 && $puissance<=9){return 73415;}
-                        if ($puissance<=10 && $puissance<=11){return 114693;}
-                        if ($puissance<=12 && $puissance<=100000){return 129058;}
+                        if (1 <=$puissance && $puissance<=2){return 58675;}
+                        if (3 <=$puissance && $puissance<=6){return 66885;}
+                        if (7 <=$puissance && $puissance<=9){return 73415;}
+                        if (10<=$puissance  && $puissance<=11){return 114693;}
+                        if (12<=$puissance  && $puissance<=100000){return 129058;}
                     }
                     if ($energie=="D")
                     {
                         if ($puissance==1){return 58675;}
-                        if ($puissance<=2 && $puissance<=4){return 66885;}
-                        if ($puissance<=5 && $puissance<=6){return 73415;}
-                        if ($puissance<=7 && $puissance<=8){return 114693;}
-                        if ($puissance<=9 && $puissance<=100000){return 129058;}
+                        if (2 <= $puissance && $puissance<=4){return 66885;}
+                        if (5 <= $puissance && $puissance<=6){return 73415;}
+                        if (7 <= $puissance && $puissance<=8){return 114693;}
+                        if (9 <= $puissance && $puissance<=100000){return 129058;}
                     }
                     break;
                 case 12:
                     if ($energie=="E")
                     {
-                        if ($puissance<=1 && $puissance<=2){return 61609;}
-                        if ($puissance<=3 && $puissance<=6){return 70229;}
-                        if ($puissance<=7 && $puissance<=9){return 77086;}
-                        if ($puissance<=10 && $puissance<=11){return 120428;}
-                        if ($puissance<=12 && $puissance<=100000){return 135511;}
+                        if (1  <= $puissance && $puissance<=2){return 61609;}
+                        if (3  <= $puissance && $puissance<=6){return 70229;}
+                        if (7  <= $puissance && $puissance<=9){return 77086;}
+                        if (10 <= $puissance  && $puissance<=11){return 120428;}
+                        if (12 <= $puissance  && $puissance<=100000){return 135511;}
                     }
                     if ($energie=="D")
                     {
                         if ($puissance==1){return 61609;}
-                        if ($puissance<=2 && $puissance<=4){return 70229;}
-                        if ($puissance<=5 && $puissance<=6){return 77086;}
-                        if ($puissance<=7 && $puissance<=8){return 120428;}
-                        if ($puissance<=9 && $puissance<=100000){return 135511;}
+                        if (2<= $puissance && $puissance<=4){return 70229;}
+                        if (5<= $puissance && $puissance<=6){return 77086;}
+                        if (7<= $puissance && $puissance<=8){return 120428;}
+                        if (9<= $puissance && $puissance<=100000){return 135511;}
                     }
                     break;
                 case 8:
                     if ($energie=="E")
                     {
-                        if ($puissance<=1 && $puissance<=2){return 106675;}
-                        if ($puissance<=3 && $puissance<=6){return 121603;}
-                        if ($puissance<=7 && $puissance<=9){return 133481;}
-                        if ($puissance<=10 && $puissance<=11){return 208525;}
-                        if ($puissance<=12 && $puissance<=100000){return 234644;}
+                        if ( 1 <= $puissance && $puissance<=2){return 106675;}
+                        if ( 3 <= $puissance && $puissance<=6){return 121603;}
+                        if ( 7 <= $puissance && $puissance<=9){return 133481;}
+                        if ( 10<= $puissance  && $puissance<=11){return 208525;}
+                        if ( 12<= $puissance  && $puissance<=100000){return 234644;}
                     }
                     if ($energie=="D")
                     {
-                        if ($puissance<=0 && $puissance<=1){return 0;}
-                        if ($puissance<=2 && $puissance<=4){return 121603;}
-                        if ($puissance<=5 && $puissance<=6){return 133481;}
-                        if ($puissance<=7 && $puissance<=8){return 208525;}
-                        if ($puissance<=9 && $puissance<=100000){return 234644;}
+                        if (0 <= $puissance && $puissance<=1){return 0;}
+                        if (2 <= $puissance && $puissance<=4){return 121603;}
+                        if (5 <= $puissance && $puissance<=6){return 133481;}
+                        if (7 <= $puissance && $puissance<=8){return 208525;}
+                        if (9 <= $puissance && $puissance<=100000){return 234644;}
                     }
                     break;
 
@@ -72,108 +72,109 @@ class DevisController extends Controller
                 case 10:
                     if ($energie=="E")
                     {
-                        if ($puissance<=1 && $puissance<=2){return 58675;}
-                        if ($puissance<=3 && $puissance<=6){return 66885;}
-                        if ($puissance<=7 && $puissance<=9){return 73415;}
-                        if ($puissance<=10 && $puissance<=11){return 114693;}
-                        if ($puissance<=12 && $puissance<=100000){return 129058;}
+                        if (1 <= $puissance && $puissance<=2){return 58675;}
+                        if (3 <= $puissance && $puissance<=6){return 66885;}
+                        if (7 <= $puissance && $puissance<=9){return 73415;}
+                        if (10<= $puissance  && $puissance<=11){return 114693;}
+                        if (12<= $puissance  && $puissance<=100000){return 129058;}
                     }
                     if ($energie=="D")
                     {
-                        if ($puissance<=0 && $puissance<=1){return 58675;}
-                        if ($puissance<=2 && $puissance<=4){return 66885;}
-                        if ($puissance<=5 && $puissance<=6){return 73415;}
-                        if ($puissance<=7 && $puissance<=8){return 114693;}
-                        if ($puissance<=9 && $puissance<=100000){return 129058;}
+                        if ( 0 <= $puissance && $puissance<=1){return 58675;}
+                        if ( 2 <= $puissance && $puissance<=4){return 66885;}
+                        if ( 5 <= $puissance && $puissance<=6){return 73415;}
+                        if ( 7 <= $puissance && $puissance<=8){return 114693;}
+                        if ( 9 <= $puissance && $puissance<=100000){return 129058;}
                     }
                     break;
                 case 2:
-                    if ($chargeUtile<=0 && $chargeUtile<=1){ return 118965; }
-                    if ($chargeUtile>1 && $chargeUtile<=3){ return 155190; }
-                    if ($chargeUtile>3 && $chargeUtile<=5){ return 189715; }
-                    if ($chargeUtile>5 && $chargeUtile<=8){ return 244617; }
-                    if ($chargeUtile>8 && $chargeUtile<=11){ return 260925; }
-                    if ($chargeUtile>11 && $chargeUtile<=13){ return 273407; }
-                    if ($chargeUtile>13 && $chargeUtile<=15){ return 329405; }
+                    if ( 0 <= $chargeUtile  && $chargeUtile<=1){ return 118965; }
+                    if ( 1  > $chargeUtile && $chargeUtile<=3){ return 155190; }
+                    if ( 3  > $chargeUtile && $chargeUtile<=5){ return 189715; }
+                    if ( 5  > $chargeUtile && $chargeUtile<=8){ return 244617; }
+                    if ( 8  > $chargeUtile && $chargeUtile<=11){ return 260925; }
+                    if ( 11 > $chargeUtile  && $chargeUtile<=13){ return 273407; }
+                    if ( 13 > $chargeUtile  && $chargeUtile<=15){ return 329405; }
                     if ($chargeUtile>15){ return 431327; }
                 break;
 
                 case 3:
-                    if ($chargeUtile<=0 && $chargeUtile<=1){ return 133500; }
-                    if ($chargeUtile>1 && $chargeUtile<=3){ return 171300; }
-                    if ($chargeUtile>3 && $chargeUtile<=5){ return 215000; }
-                    if ($chargeUtile>5 && $chargeUtile<=9){ return 269700; }
-                    if ($chargeUtile>9 && $chargeUtile<=12){ return 339400; }
-                    if ($chargeUtile>12 && $chargeUtile<=15){ return 444500; }
+                     if ($chargeUtile<=0  && $chargeUtile<=1){ return 133500; }
+                     if (1 > $chargeUtile && $chargeUtile<=3){ return 171300; }
+                     if (3 > $chargeUtile && $chargeUtile<=5){ return 215000; }
+                     if (5 > $chargeUtile && $chargeUtile<=9){ return 269700; }
+                     if (9 > $chargeUtile && $chargeUtile<=12){ return 339400; }
+                     if (12> $chargeUtile  && $chargeUtile<=15){ return 444500; }
                     if ($chargeUtile>15){ return 489000; }
                 break;
 
                 case 5:
-                    if ($puissance<=0 && $puissance<=50){return 11642; }
-                    if ($puissance<=51 && $puissance<=99){return 19058; }
-                    if ($puissance<=100 && $puissance<=175){return 27891; }
-                    if ($puissance<=176 && $puissance<=350){return 35858; }
-                    if ($puissance>350 && $puissance<=10000){return 47814; }
+                    if (0  <= $puissance && $puissance<=50){return 11642; }
+                    if (51 <= $puissance  && $puissance<=99){return 19058; }
+                    if (100<= $puissance  && $puissance<=175){return 27891; }
+                    if (176<= $puissance  && $puissance<=350){return 35858; }
+                    if (350 > $puissance  && $puissance<=10000){return 47814; }
                 break;
             }
-            else if($zone==2)
+        }
+            elseif($zone==2)
             {
                 switch ($categorie)
                 {
                     case 1:
                         if ($energie=="E")
                         {
-                            if ($puissance<=1 && $puissance<=2){return 55741;}
-                            if ($puissance<=3 && $puissance<=6){return 63541;}
-                            if ($puissance<=7 && $puissance<=9){return 69744;}
-                            if ($puissance<=10 && $puissance<=11){return 108958;}
-                            if ($puissance<=12 && $puissance<=100000){return 122605;}
+                            if (1  <= $puissance && $puissance<=2){return 55741;}
+                            if (3  <= $puissance && $puissance<=6){return 63541;}
+                            if (7  <= $puissance && $puissance<=9){return 69744;}
+                            if (10 <= $puissance  && $puissance<=11){return 108958;}
+                            if (12 <= $puissance  && $puissance<=100000){return 122605;}
                         }
                         if ($energie=="D")
                         {
                             if ($puissance==1){return 55741;}
-                            if ($puissance<=2 && $puissance<=4){return 63541;}
-                            if ($puissance<=5 && $puissance<=6){return 69744;}
-                            if ($puissance<=7 && $puissance<=8){return 108958;}
-                            if ($puissance<=9 && $puissance<=100000){return 122605;}
+                            if (2<= $puissance && $puissance<=4){return 63541;}
+                            if (5<= $puissance && $puissance<=6){return 69744;}
+                            if (7<= $puissance && $puissance<=8){return 108958;}
+                            if (9<= $puissance && $puissance<=100000){return 122605;}
                         }
                     break;
 
                     case 12:
                         if ($energie=="E")
                         {
-                            if ($puissance<=1 && $puissance<=2){return 58529;}
-                            if ($puissance<=3 && $puissance<=6){return 66718;}
-                            if ($puissance<=7 && $puissance<=9){return 73232;}
-                            if ($puissance<=10 && $puissance<=11){return 114407;}
-                            if ($puissance<=12 && $puissance<=100000){return 128735;}
+                            if (1  <= $puissance && $puissance<=2){return 58529;}
+                            if (3  <= $puissance && $puissance<=6){return 66718;}
+                            if (7  <= $puissance && $puissance<=9){return 73232;}
+                            if (10 <= $puissance  && $puissance<=11){return 114407;}
+                            if (12 <= $puissance  && $puissance<=100000){return 128735;}
                         }
                         if ($energie=="D")
                         {
                             if ($puissance==1){return 58529;}
-                            if ($puissance<=2 && $puissance<=4){return 66718;}
-                            if ($puissance<=5 && $puissance<=6){return 73232;}
-                            if ($puissance<=7 && $puissance<=8){return 114407;}
-                            if ($puissance<=9 && $puissance<=100000){return 128735;}
+                            if (2 <= $puissance && $puissance<=4){return 66718;}
+                            if (5 <= $puissance && $puissance<=6){return 73232;}
+                            if (7 <= $puissance && $puissance<=8){return 114407;}
+                            if (9 <= $puissance && $puissance<=100000){return 128735;}
                         }
                     break;
 
                     case 8:
                         if ($energie=="E")
                         {
-                            if ($puissance<=1 && $puissance<=2){return 101341;}
-                            if ($puissance<=3 && $puissance<=6){return 115523;}
-                            if ($puissance<=7 && $puissance<=9){return 126807;}
-                            if ($puissance<=10 && $puissance<=11){return 198099;}
-                            if ($puissance<=12 && $puissance<=100000){return 222912;}
+                            if (1  <= $puissance && $puissance<=2){return 101341;}
+                            if (3  <= $puissance && $puissance<=6){return 115523;}
+                            if (7  <= $puissance && $puissance<=9){return 126807;}
+                            if (10 <= $puissance  && $puissance<=11){return 198099;}
+                            if (12 <= $puissance  && $puissance<=100000){return 222912;}
                         }
                         if ($energie=="D")
                         {
-                            if ($puissance<=0 && $puissance<=1){return 0;}
-                            if ($puissance<=2 && $puissance<=4){return 115523;}
-                            if ($puissance<=5 && $puissance<=6){return 126807;}
-                            if ($puissance<=7 && $puissance<=8){return 198099;}
-                            if ($puissance<=9 && $puissance<=100000){return 222912;}
+                            if (0 <= $puissance && $puissance<=1){return 0;}
+                            if (2 <= $puissance && $puissance<=4){return 115523;}
+                            if (5 <= $puissance && $puissance<=6){return 126807;}
+                            if (7 <= $puissance && $puissance<=8){return 198099;}
+                            if (9 <= $puissance && $puissance<=100000){return 222912;}
                         }
                         break;
 
@@ -184,49 +185,49 @@ class DevisController extends Controller
                     case 10:
                         if ($energie=="E")
                         {
-                            if ($puissance<=1 && $puissance<=2){return 55741;}
-                            if ($puissance<=3 && $puissance<=6){return 63541;}
-                            if ($puissance<=7 && $puissance<=9){return 69744;}
-                            if ($puissance<=10 && $puissance<=11){return 108958;}
-                            if ($puissance<=12 && $puissance<=100000){return 122605;}
+                            if (1  <= $puissance && $puissance<=2){return 55741;}
+                            if (3  <= $puissance && $puissance<=6){return 63541;}
+                            if (7  <= $puissance && $puissance<=9){return 69744;}
+                            if (10 <= $puissance  && $puissance<=11){return 108958;}
+                            if (12 <= $puissance  && $puissance<=100000){return 122605;}
                         }
                         if ($energie=="D")
                         {
                             if ($puissance==1){return 55741;}
-                            if ($puissance<=2 && $puissance<=4){return 63541;}
-                            if ($puissance<=5 && $puissance<=6){return 69744;}
-                            if ($puissance<=7 && $puissance<=8){return 108958;}
-                            if ($puissance<=9 && $puissance<=100000){return 122605;}
+                            if (2 <= $puissance && $puissance<=4){return 63541;}
+                            if (5 <= $puissance && $puissance<=6){return 69744;}
+                            if (7 <= $puissance && $puissance<=8){return 108958;}
+                            if (9 <= $puissance && $puissance<=100000){return 122605;}
                         }
                     break;
 
                     case 2:
-                        if ($chargeUtile<=0 && $chargeUtile<=1){ return 113017; }
-                        if ($chargeUtile>1 && $chargeUtile<=3){ return 147431; }
-                        if ($chargeUtile>3 && $chargeUtile<=5){ return 180229; }
-                        if ($chargeUtile>5 && $chargeUtile<=8){ return 232386; }
-                        if ($chargeUtile>8 && $chargeUtile<=11){ return 247879; }
-                        if ($chargeUtile>11 && $chargeUtile<=13){ return 259737; }
-                        if ($chargeUtile>13 && $chargeUtile<=15){ return 312935; }
+                        if ( 0 <= $chargeUtile  && $chargeUtile<=1){ return 113017; }
+                        if ( 1 > $chargeUtile && $chargeUtile<=3){ return 147431; }
+                        if ( 3 > $chargeUtile && $chargeUtile<=5){ return 180229; }
+                        if ( 5 > $chargeUtile && $chargeUtile<=8){ return 232386; }
+                        if ( 8 > $chargeUtile && $chargeUtile<=11){ return 247879; }
+                        if ( 11> $chargeUtile  && $chargeUtile<=13){ return 259737; }
+                        if ( 13> $chargeUtile  && $chargeUtile<=15){ return 312935; }
                         if ($chargeUtile>15){ return 409761; }
                     break;
 
                     case 3:
-                        if ($chargeUtile<=0 && $chargeUtile<=1){ return 126825; }
-                        if ($chargeUtile>1 && $chargeUtile<=3){ return 162735; }
-                        if ($chargeUtile>3 && $chargeUtile<=5){ return 204250; }
-                        if ($chargeUtile>5 && $chargeUtile<=9){ return 256215; }
-                        if ($chargeUtile>9 && $chargeUtile<=12){ return 322430; }
-                        if ($chargeUtile>12 && $chargeUtile<=15){ return 422275; }
+                        if ( 0  <= $chargeUtile && $chargeUtile<=1){ return 126825; }
+                        if ( 1  >  $chargeUtile  && $chargeUtile<=3){ return 162735; }
+                        if ( 3  >  $chargeUtile  && $chargeUtile<=5){ return 204250; }
+                        if ( 5  >  $chargeUtile  && $chargeUtile<=9){ return 256215; }
+                        if ( 9  >  $chargeUtile  && $chargeUtile<=12){ return 322430; }
+                        if ( 12 >  $chargeUtile  && $chargeUtile<=15){ return 422275; }
                         if ($chargeUtile>15){ return 464550; }
                     break;
 
                     case 5:
-                        if ($puissance<=0 && $puissance<=50){return 11060; }
-                        if ($puissance<=51 && $puissance<=99){return 18105; }
-                        if ($puissance<=100 && $puissance<=175){return 26496; }
-                        if ($puissance<=176 && $puissance<=350){return 34065; }
-                        if ($puissance>350 && $puissance<=10000){return 45423; }
+                        if (0   <=  $puissance && $puissance<=50){return 11060; }
+                        if (51  <=  $puissance && $puissance<=99){return 18105; }
+                        if (100 <=  $puissance  && $puissance<=175){return 26496; }
+                        if (176 <=  $puissance  && $puissance<=350){return 34065; }
+                        if (350 >    $puissance && $puissance<=10000){return 45423; }
                     break;
                 }
             }
@@ -238,57 +239,57 @@ class DevisController extends Controller
                     case 1:
                         if ($energie=="E")
                         {
-                            if ($puissance<=1 && $puissance<=2){return 52808;}
-                            if ($puissance<=3 && $puissance<=6){return 60197;}
-                            if ($puissance<=7 && $puissance<=9){return 66074;}
-                            if ($puissance<=10 && $puissance<=11){return 103224;}
-                            if ($puissance<=12 && $puissance<=100000){return 116152;}
+                            if (1  <= $puissance && $puissance<=2){return 52808;}
+                            if (3  <= $puissance && $puissance<=6){return 60197;}
+                            if (7  <= $puissance && $puissance<=9){return 66074;}
+                            if (10 <= $puissance  && $puissance<=11){return 103224;}
+                            if (12 <= $puissance  && $puissance<=100000){return 116152;}
                         }
                         if ($energie=="D")
                         {
                             if ($puissance==1){return 52808;}
-                            if ($puissance<=2 && $puissance<=4){return 60197;}
-                            if ($puissance<=5 && $puissance<=6){return 66074;}
-                            if ($puissance<=7 && $puissance<=8){return 103224;}
-                            if ($puissance<=9 && $puissance<=100000){return 116152;}
+                            if (2 <= $puissance && $puissance<=4){return 60197;}
+                            if (5 <= $puissance && $puissance<=6){return 66074;}
+                            if (7 <= $puissance && $puissance<=8){return 103224;}
+                            if (9 <= $puissance && $puissance<=100000){return 116152;}
                         }
                     break;
 
                     case 12:
                         if ($energie=="E")
                         {
-                            if ($puissance<=1 && $puissance<=2){return 55448;}
-                            if ($puissance<=3 && $puissance<=6){return 63206;}
-                            if ($puissance<=7 && $puissance<=9){return 69377;}
-                            if ($puissance<=10 && $puissance<=11){return 108385;}
-                            if ($puissance<=12 && $puissance<=100000){return 121960;}
+                            if (1  <= $puissance && $puissance<=2){return 55448;}
+                            if (3  <= $puissance && $puissance<=6){return 63206;}
+                            if (7  <= $puissance && $puissance<=9){return 69377;}
+                            if (10 <= $puissance  && $puissance<=11){return 108385;}
+                            if (12 <= $puissance  && $puissance<=100000){return 121960;}
                         }
                         if ($energie=="D")
                         {
                             if ($puissance==1){return 55448;}
-                            if ($puissance<=2 && $puissance<=4){return 63206;}
-                            if ($puissance<=5 && $puissance<=6){return 69377;}
-                            if ($puissance<=7 && $puissance<=8){return 108385;}
-                            if ($puissance<=9 && $puissance<=100000){return 121960;}
+                            if (2 <= $puissance && $puissance<=4){return 63206;}
+                            if (5 <= $puissance && $puissance<=6){return 69377;}
+                            if (7 <= $puissance && $puissance<=8){return 108385;}
+                            if (9 <= $puissance && $puissance<=100000){return 121960;}
                         }
                     break;
 
                     case 8:
                         if ($energie=="E")
                         {
-                            if ($puissance<=1 && $puissance<=2){return 96008;}
-                            if ($puissance<=3 && $puissance<=6){return 109443;}
-                            if ($puissance<=7 && $puissance<=9){return 120133;}
-                            if ($puissance<=10 && $puissance<=11){return 187673;}
-                            if ($puissance<=12 && $puissance<=100000){return 211180;}
+                            if (1  <= $puissance && $puissance<=2){return 96008;}
+                            if (3  <= $puissance && $puissance<=6){return 109443;}
+                            if (7  <= $puissance && $puissance<=9){return 120133;}
+                            if (10 <= $puissance  && $puissance<=11){return 187673;}
+                            if (12 <= $puissance  && $puissance<=100000){return 211180;}
                         }
                         if ($energie=="D")
                         {
-                            if ($puissance<=0 && $puissance<=1){return 0;}
-                            if ($puissance<=2 && $puissance<=4){return 109443;}
-                            if ($puissance<=5 && $puissance<=6){return 120133;}
-                            if ($puissance<=7 && $puissance<=8){return 187673;}
-                            if ($puissance<=9 && $puissance<=100000){return 211180;}
+                            if (0 <= $puissance && $puissance<=1){return 0;}
+                            if (2 <= $puissance && $puissance<=4){return 109443;}
+                            if (5 <= $puissance && $puissance<=6){return 120133;}
+                            if (7 <= $puissance && $puissance<=8){return 187673;}
+                            if (9 <= $puissance && $puissance<=100000){return 211180;}
                         }
                         break;
 
@@ -299,49 +300,49 @@ class DevisController extends Controller
                     case 10:
                         if ($energie=="E")
                         {
-                            if ($puissance<=1 && $puissance<=2){return 52808;}
-                            if ($puissance<=3 && $puissance<=6){return 60197;}
-                            if ($puissance<=7 && $puissance<=9){return 66074;}
-                            if ($puissance<=10 && $puissance<=11){return 103224;}
-                            if ($puissance<=12 && $puissance<=100000){return 116152;}
+                            if ( 1 <= $puissance && $puissance<=2){return 52808;}
+                            if ( 3 <= $puissance && $puissance<=6){return 60197;}
+                            if ( 7 <= $puissance && $puissance<=9){return 66074;}
+                            if ( 10<= $puissance  && $puissance<=11){return 103224;}
+                            if ( 12<= $puissance  && $puissance<=100000){return 116152;}
                         }
                         if ($energie=="D")
                         {
                             if ($puissance==1){return 52808;}
-                            if ($puissance<=2 && $puissance<=4){return 60197;}
-                            if ($puissance<=5 && $puissance<=6){return 66074;}
-                            if ($puissance<=7 && $puissance<=8){return 103224;}
-                            if ($puissance<=9 && $puissance<=100000){return 116152;}
+                            if (2 <= $puissance && $puissance<=4){return 60197;}
+                            if (5 <= $puissance && $puissance<=6){return 66074;}
+                            if (7 <= $puissance && $puissance<=8){return 103224;}
+                            if (9 <= $puissance && $puissance<=100000){return 116152;}
                         }
                     break;
 
                     case 2:
-                        if ($chargeUtile<=0 && $chargeUtile<=1){ return 107069; }
-                        if ($chargeUtile>1 && $chargeUtile<=3){ return 139671; }
-                        if ($chargeUtile>3 && $chargeUtile<=5){ return 170744; }
-                        if ($chargeUtile>5 && $chargeUtile<=8){ return 220155; }
-                        if ($chargeUtile>8 && $chargeUtile<=11){ return 234833; }
-                        if ($chargeUtile>11 && $chargeUtile<=13){ return 246066; }
-                        if ($chargeUtile>13 && $chargeUtile<=15){ return 296465; }
+                        if (0 <= $chargeUtile && $chargeUtile<=1){ return 107069; }
+                        if (1 >  $chargeUtile  && $chargeUtile<=3){ return 139671; }
+                        if (3 >  $chargeUtile  && $chargeUtile<=5){ return 170744; }
+                        if (5 >  $chargeUtile  && $chargeUtile<=8){ return 220155; }
+                        if (8 >  $chargeUtile  && $chargeUtile<=11){ return 234833; }
+                        if (1 >  $chargeUtile1 && $chargeUtile<=13){ return 246066; }
+                        if (1 >  $chargeUtile3 && $chargeUtile<=15){ return 296465; }
                         if ($chargeUtile>15){ return 388194; }
                     break;
 
                     case 3:
-                        if ($chargeUtile<=0 && $chargeUtile<=1){ return 120150; }
-                        if ($chargeUtile>1 && $chargeUtile<=3){ return 154170; }
-                        if ($chargeUtile>3 && $chargeUtile<=5){ return 193500; }
-                        if ($chargeUtile>5 && $chargeUtile<=9){ return 242730; }
-                        if ($chargeUtile>9 && $chargeUtile<=12){ return 305460; }
-                        if ($chargeUtile>12 && $chargeUtile<=15){ return 400050; }
+                        if ( 0  <= $chargeUtile && $chargeUtile<=1){ return 120150; }
+                        if ( 1  >  $chargeUtile  && $chargeUtile<=3){ return 154170; }
+                        if ( 3  >  $chargeUtile  && $chargeUtile<=5){ return 193500; }
+                        if ( 5  >  $chargeUtile  && $chargeUtile<=9){ return 242730; }
+                        if ( 9  >  $chargeUtile  && $chargeUtile<=12){ return 305460; }
+                        if ( 12 >  $chargeUtile  && $chargeUtile<=15){ return 400050; }
                         if ($chargeUtile>15){ return 440100; }
                     break;
 
                     case 5:
-                        if ($puissance<=0 && $puissance<=50){return 10478; }
-                        if ($puissance<=51 && $puissance<=99){return 17152; }
-                        if ($puissance<=100 && $puissance<=175){return 25102; }
-                        if ($puissance<=176 && $puissance<=350){return 32272; }
-                        if ($puissance>350 && $puissance<=10000){return 43033; }
+                        if ( 0   <= $puissance && $puissance<=50){return 10478; }
+                        if ( 51  <= $puissance && $puissance<=99){return 17152; }
+                        if ( 100 <= $puissance  && $puissance<=175){return 25102; }
+                        if ( 176 <= $puissance  && $puissance<=350){return 32272; }
+                        if ( 350 >  $puissance  && $puissance<=10000){return 43033; }
                     break;
                 }
         }
@@ -605,5 +606,10 @@ class DevisController extends Controller
                 return 0;
                 break;
         }
+    }
+
+    public function primeFractionee($rcCat01, $fractionPrime)
+    {
+        return $rcCat01 * $fractionPrime;
     }
 }
