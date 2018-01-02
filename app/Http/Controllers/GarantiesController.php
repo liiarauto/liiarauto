@@ -23,4 +23,24 @@ class GarantiesController extends Controller
         else
             return $incendieExplosion;
     }
+
+    public function volVolAgressionEtVolAccessoires($categorie, $valeurVenale)
+    {
+        $volVolAgression = $this->devis->volVolAgression($categorie, $valeurVenale);
+
+        if($volVolAgression < 20000)
+            return 20000;
+        else
+            return $volVolAgression;
+    }
+
+    public function brisDeGlace($categorie, $valeurNeuve)
+    {
+        $brisDeGlace = $this->devis->brisDeGlace($categorie, $valeurNeuve);
+
+        if($brisDeGlace < 10000)
+            return 10000;
+        else
+            return $brisDeGlace;
+    }
 }

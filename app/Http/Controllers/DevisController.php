@@ -433,7 +433,7 @@ class DevisController extends Controller
         }
     }
 
-    public function bris2Glace($categorie, $valeurNeuve)
+    public function brisDeGlace($categorie, $valeurNeuve)
     {
         switch ($categorie)
         {
