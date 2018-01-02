@@ -14,10 +14,12 @@ class TestController extends Controller
     public function index()
     {
         $d = new DevisController();
+        $g = new GarantiesController();
 
         $pb = $d->rcCat01(12,4,'E',20,8,1);
         $fp = $d->fractionPrime(6);
-        return $d->primeFractionee($pb,$fp);
+        // return $d->primeFractionee($pb,$fp);
+        return $g->incendie(1,1,6000000);
 
     }
 
