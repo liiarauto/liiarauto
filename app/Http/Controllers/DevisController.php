@@ -455,7 +455,7 @@ class DevisController extends Controller
         }
     }
 
-    public function personneTransportee($nbPlace, $formule)
+    public function personnesTransportees($nbPlace, $formule)
     {
         switch ($nbPlace)
         {

@@ -34,4 +34,10 @@ class GarantiesTest extends TestCase
         $r = $this->garanties->brisDeGlace(1,20000000);
         $this->assertEquals(45000,$r);
     }
+
+    public function testIndPersonnesTransportees()
+    {
+        $r = $this->garanties->indPersonnesTransportees(5,1);
+        $this->assertEquals(5900,$r);
+    }
 }

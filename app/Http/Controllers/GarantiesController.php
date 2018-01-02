@@ -14,7 +14,7 @@ class GarantiesController extends Controller
         $this->devis = new DevisController();
     }
 
-    public function incendie($categorie, $sousCategorie, $valeurVenale)
+    public function incendie($categorie, $sousCategorie=1, $valeurVenale)
     {
         $incendieExplosion = $this->devis->incendieExplosion($categorie, $sousCategorie, $valeurVenale);
 
@@ -42,5 +42,15 @@ class GarantiesController extends Controller
             return 10000;
         else
             return $brisDeGlace;
+    }
+
+    public function avanceSurRecours()
+    {
+        return 15000;
+    }
+
+    public function indPersonnesTransportees($nbPlace, $formule=1)
+    {
+        return $this->devis->personnesTransportees($nbPlace, $formule);
     }
 }
