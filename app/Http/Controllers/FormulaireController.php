@@ -34,7 +34,8 @@ class FormulaireController extends Controller
      */
     public function store(Request $request)
     {
-        return $request;
+        // return $request;
+        return view('devis', $request);
     }
 
     /**

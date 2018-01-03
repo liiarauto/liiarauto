@@ -21,3 +21,4 @@ Route::get('domaines', function () {
 
 Route::resource('formulaire', 'FormulaireController');
 Route::resource('test', 'TestController');
+Route::resource('devis', 'TestController');
