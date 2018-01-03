@@ -14,6 +14,26 @@ class GarantiesController extends Controller
         $this->devis = new DevisController();
     }
 
+    /**
+     * Tarif en cas de Formule non pris en compte
+     */
+    public function defenseEtRecours($categorie, $rcCat01=null, $fractionPrime=null)
+    { 
+        if($categorie==3)
+        {
+            $primeFractionnee = $this->devis->primeFractionnee($rcCat01, $fractionPrime);
+            return ($primeFractionnee * 10)/100;
+        }
+        elseif($categorie==5)
+        {
+            return 3000;
+        }
+        else 
+        {
+            return 7500;
+        }
+    }
+
     public function incendie($categorie, $sousCategorie=1, $valeurVenale)
     {
         $incendieExplosion = $this->devis->incendieExplosion($categorie, $sousCategorie, $valeurVenale);
@@ -49,6 +69,9 @@ class GarantiesController extends Controller
         return 15000;
     }
 
+    /**
+     * Personnes tranportées ou Sécurité routière
+     */
     public function indPersonnesTransportees($nbPlace, $formule=1)
     {
         return $this->devis->personnesTransportees($nbPlace, $formule);

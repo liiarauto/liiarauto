@@ -17,6 +17,12 @@ class GarantiesTest extends TestCase
         $this->garanties = new GarantiesController();
     }
 
+    public function testDefenseEtRecours()
+    {
+        $r = $this->garanties->defenseEtRecours(1);
+        $this->assertEquals(7500,$r);
+    }
+
     public function testIncendie()
     {
         $r = $this->garanties->incendie(1,1,6000000);
