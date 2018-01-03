@@ -3,6 +3,8 @@
 namespace LiiarAuto\Http\Controllers;
 
 use Illuminate\Http\Request;
+use LiiarAuto\Http\Controllers\Assurance\DevisController as DevisController;
+use LiiarAuto\Http\Controllers\Assurance\GarantiesController as GarantiesController;
 
 class TestController extends Controller
 {

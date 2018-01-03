@@ -3,7 +3,7 @@
 namespace Tests\Unit;
 
 use Tests\TestCase;
-use LiiarAuto\Http\Controllers\GarantiesController as GarantiesController;
+use LiiarAuto\Http\Controllers\Assurance\GarantiesController as GarantiesController;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 

@@ -1,12 +1,13 @@
 <?php
 
-namespace LiiarAuto\Http\Controllers;
+namespace LiiarAuto\Http\Controllers\Assurance;
 
 use Illuminate\Http\Request;
+use LiiarAuto\Http\Controllers\Controller as Controller;
 
 class DevisController extends Controller
 {
-    public function rcCat01($categorie, $puissance, $energie, $chargeUtile, $nbPersonne, $zone)
+    public function rcCat01($categorie, $puissance, $energie, $chargeUtile, $nbPersonnes, $zone)
     {
         if($zone=1)
         {

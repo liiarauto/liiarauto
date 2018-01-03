@@ -1,8 +1,9 @@
 <?php
 
-namespace LiiarAuto\Http\Controllers;
+namespace LiiarAuto\Http\Controllers\Assurance;
 
 use Illuminate\Http\Request;
+use LiiarAuto\Http\Controllers\Controller as Controller;
 
 class GarantiesController extends Controller
 {
