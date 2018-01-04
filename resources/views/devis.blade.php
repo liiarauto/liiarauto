@@ -135,7 +135,7 @@ Facebook: 		https://www.facebook.com/fh5co
                         {{--  <p>grencisse@gmail.com</p>  --}}
                         <p>{{$souscripteur['email']}}</p>
                         {{--  <p><strong>Prodession: </strong>Developpeur</p>  --}}
-                        <p><strong>Prodession: </strong>{{$souscripteur['profession']}}</p>
+                        <p><strong>Profession: </strong>{{$souscripteur['profession']}}</p>
                     </div>
                 </div>
                 <div class="panel panel-default col-md-4 animate-box" data-animate-effect="fadeIn">
@@ -236,22 +236,15 @@ Facebook: 		https://www.facebook.com/fh5co
                                         <td>Garanties</td>
                                         <td>Franchises</td>
                                         <td>Primes annuelles</td>
-                                        <td>Primes périodiaques</td>
+                                        <td>Primes périodiques</td>
                                     </tr>
                                 </thead>
                                 <tr>
                                     <td>1</td>
                                     <td>Responsabilité civile</td>
                                     <td>-</td>
-                                    <td>14659451</td>
-                                    <td>14595964</td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Responsabilité civile</td>
-                                    <td>-</td>
-                                    <td>14659451</td>
-                                    <td>14595964</td>
+                                    <td>{{$garanties['rc']['brute']}}</td>
+                                    <td>{{$garanties['rc']['fractionnee']}}</td>
                                 </tr>
                             </table>
                         </div>
