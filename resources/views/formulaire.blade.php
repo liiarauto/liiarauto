@@ -320,8 +320,8 @@ Facebook: 		https://www.facebook.com/fh5co
                                 <div class="input-group col-md-12">
                                     <label for="vehicule[energie]">Energie</label>
                                     <select name="vehicule[energie]" class="form-control">
-                                        <option value="1">Essence</option>
-                                        <option value="2">Diesel</option>
+                                        <option value="E">Essence</option>
+                                        <option value="D">Diesel</option>
                                     </select>
                                 </div>
                             </div>

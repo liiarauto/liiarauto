@@ -3,8 +3,10 @@
 namespace LiiarAuto\Http\Controllers;
 
 use Illuminate\Http\Request;
+use LiiarAuto\Http\Controllers\Assurance\DevisController as DevisController;
+use LiiarAuto\Http\Controllers\Assurance\GarantiesController as GarantiesController;
 
-class FormulaireController extends Controller
+class TestController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +15,14 @@ class FormulaireController extends Controller
      */
     public function index()
     {
-        return view('formulaire');
+        $d = new DevisController();
+        $g = new GarantiesController();
+
+        $pb = $d->rcCat01(12,4,'E',20,8,1);
+        $fp = $d->fractionPrime(6);
+        // return $d->primeFractionee($pb,$fp);
+        return $g->incendie(1,1,6000000);
+
     }
 
     /**
@@ -34,8 +43,7 @@ class FormulaireController extends Controller
      */
     public function store(Request $request)
     {
-        // return $request;
-        return view('devis', $request);
+        //
     }
 
     /**
