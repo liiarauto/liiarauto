@@ -608,9 +608,4 @@ class DevisController extends Controller
                 break;
         }
     }
-
-    public function primeFractionee($rcCat01, $fractionPrime)
-    {
-        return $rcCat01 * $fractionPrime;
-    }
 }

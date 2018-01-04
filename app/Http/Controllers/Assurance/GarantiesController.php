@@ -55,7 +55,7 @@ class GarantiesController extends Controller
             return $volVolAgression;
     }
 
-    public function brisDeGlace($categorie, $valeurNeuve)
+    public function brisDeGlaces($categorie, $valeurNeuve)
     {
         $brisDeGlace = $this->devis->brisDeGlace($categorie, $valeurNeuve);
 

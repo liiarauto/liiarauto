@@ -43,7 +43,7 @@ class GarantiesTest extends TestCase
 
     public function testBrisDeGlace()
     {
-        $r = $this->primesBrutes->brisDeGlace(1,20000000);
+        $r = $this->primesBrutes->brisDeGlaces(1,20000000);
         $this->assertEquals(45000,$r);
     }
 

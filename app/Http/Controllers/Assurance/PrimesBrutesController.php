@@ -46,9 +46,14 @@ class PrimesBrutesController extends Controller
         return $this->garanties->volVolAgressionEtVolAccessoires($categorie, $valeurVenale);
     }
 
-    public function brisDeGlace($categorie, $valeurNeuve)
+    public function brisDeGlaces($categorie, $valeurNeuve)
     {
-        return $this->garanties->brisDeGlace($categorie, $valeurNeuve);
+        return $this->garanties->brisDeGlaces($categorie, $valeurNeuve);
+    }
+
+    public function avanceSurRecours()
+    {
+        return $this->garanties->avanceSurRecours();
     }
 
     public function indPersonnesTransportees($nbPlace, $formule=1)
