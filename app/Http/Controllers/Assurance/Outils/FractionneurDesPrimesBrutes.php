@@ -7,7 +7,7 @@ use LiiarAuto\Http\Controllers\Controller;
 use LiiarAuto\Http\Controllers\Assurance\DevisController as Devis;
 use LiiarAuto\Http\Controllers\Assurance\PrimesBrutesController as PrimesBrutes;
 
-class FractioneurDesPrimesBrutes extends Controller
+class FractionneurDesPrimesBrutes extends Controller
 {
     protected $devis;
     protected $primesBrutes;
@@ -20,7 +20,7 @@ class FractioneurDesPrimesBrutes extends Controller
 
     public function rC($rcCat01, $fractionPrime)
     {
-        return $rcCat01 * $fractionPrime;
+        return ceil($rcCat01 * $fractionPrime);
     }
 
     /**
