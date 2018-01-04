@@ -39,10 +39,10 @@ class PrimesFractionneesTest extends TestCase
      * Non operationnelle
      * Activer en ajoutant le suffix test
      */
-    public function VolVolAgressionEtVolAccessoires()
+    public function testVolVolAgressionEtVolAccessoires()
     {
-        $r = $this->primesFractionnees->volVolAgressionEtVolAccessoires(1,6000000);
-        return $this->assertEquals(45000,$r);
+        $r = $this->primesFractionnees->volVolAgressionEtVolAccessoires(1,6000000,6);
+        return $this->assertEquals(22500,$r);
     }
 
     public function testBrisDeGlaces()
@@ -56,4 +56,5 @@ class PrimesFractionneesTest extends TestCase
         $r = $this->primesFractionnees->avanceSurRecours(6);
         return $this->assertEquals(7500,$r);
     }
+    
 }

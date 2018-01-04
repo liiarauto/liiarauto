@@ -49,11 +49,14 @@ class PrimesFractionneesController extends Controller
     }
 
     /**
+     * Incomplet, juste une partie implémentée
      * Données manqunantes
      */
-    public function volVolAgressionEtVolAccessoires($categorie,$valeurVenale)
+    public function volVolAgressionEtVolAccessoires($categorie,$valeurVenale,$nbMois)
     {
-
+        $vol = $this->fractionneur->volVolAgressionEtVolAccessoires($categorie,$valeurVenale);
+        // return 0.5*$vol*$nbMois/12; Donnée manquante
+        return $vol*$nbMois/12; //Tatif!F18 = FAUX. Oui, mais??
     }
 
     /**
