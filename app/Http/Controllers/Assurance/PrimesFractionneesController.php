@@ -28,7 +28,52 @@ class PrimesFractionneesController extends Controller
     {
         $rcCat01 = $this->devis->rcCat01($categorie, $puissance, $energie, $chargeUtile, $nbPersonnes, $zone);
         $fractionPrime = $this->devis->fractionPrime($nbMois);
-
+        
         return $this->fractionneur->rC($rcCat01, $fractionPrime);
+    }
+    
+    /**
+     * Fonctionnelité Collegue non prise en compte
+     */
+    public function defenseEtRecours($categorie, $puissance, $energie, $chargeUtile, $nbPersonnes, $zone, $nbMois)
+    {
+        return $this->fractionneur->defenseEtRecours($categorie, $puissance, $energie, $chargeUtile, $nbPersonnes, $zone, $nbMois);
+    }
+
+    /**
+     * Fonctionnelité Collegue non prise en compte
+     */
+    public function incendie($categorie, $sousCategorie=1, $valeurVenale, $nbMois)
+    {
+        return $this->fractionneur->incendie($categorie,$sousCategorie,$valeurVenale,$nbMois);
+    }
+
+    /**
+     * Données manqunantes
+     */
+    public function volVolAgressionEtVolAccessoires($categorie,$valeurVenale)
+    {
+
+    }
+
+    /**
+     * Fonctionnelité Collegue non prise en compte
+     */
+    public function brisDeGlaces($categorie, $valeurNeuve, $nbMois)
+    {
+        return $this->fractionneur->brisDeGlaces($categorie,$valeurNeuve,$nbMois);
+    }
+
+    /**
+     * Fonctionnelité Collegue non prise en compte
+     */
+    public function avanceSurRecours($nbMois)
+    {
+        return $this->fractionneur->avanceSurRecours($nbMois);
+    }
+
+    public function indPersonnesTransportees($nbPlaces, $formule=1, $nbMois)
+    {
+        return $this->fractionneur->indPersonnesTransportees($nbPlaces, $formule=1, $nbMois);
     }
 }

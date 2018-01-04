@@ -89,4 +89,10 @@ class FractionneurDesPrimesBrutes extends Controller
         $primeBruteIPT = $this->primesBrutes->indPersonnesTransportees($nbPlaces, $formule);
         return $primeBruteIPT*$nbMois/12;
     }
+
+    public function testIndPersonnesTransportee()
+    {
+        $r = $this->primesFractionnees->indPersonnesTransportees(5,1,6);
+        return $this->assertEquals(2950,$r);
+    }
 }
