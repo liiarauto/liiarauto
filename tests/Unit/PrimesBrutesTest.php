@@ -19,7 +19,7 @@ class GarantiesTest extends TestCase
 
     public function testResponsabilitCivile()
     {
-        $rc = $this->primesBrutes->responsabiliteCivile(1,14,'E',20,8,1);
+        $rc = $this->primesBrutes->rC(1,14,'E',20,8,1);
         $this->assertEquals(129058,$rc);
     }
     

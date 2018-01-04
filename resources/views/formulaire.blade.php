@@ -137,10 +137,10 @@ Facebook: 		https://www.facebook.com/fh5co
                             <label for="date">Périodicité</label>
                             <div class="input-group">
                                 <select name="contrat[periodicite]" id="" class="form-control">
-                                    <option value="1">Annuelle</option>
-                                    <option value="2">Mensuelle</option>
+                                    <option value="12">Annuelle</option>
+                                    <option value="1">Mensuelle</option>
                                     <option value="3">Trimestrielle</option>
-                                    <option value="4">Semestrielle</option>
+                                    <option value="6">Semestrielle</option>
                                 </select>
                             </div>
                         </div>

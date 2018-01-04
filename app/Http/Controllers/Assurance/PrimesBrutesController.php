@@ -26,7 +26,7 @@ class PrimesBrutesController extends Controller
      * @param nbPersonnes
      * @param Zone
      */
-    public function responsabiliteCivile($categorie, $puissance, $energie, $chargeUtile, $nbPersonnes, $zone)
+    public function rC($categorie, $puissance, $energie, $chargeUtile, $nbPersonnes, $zone)
     {
         return $this->devis->rcCat01($categorie, $puissance, $energie, $chargeUtile, $nbPersonnes, $zone);
     }
