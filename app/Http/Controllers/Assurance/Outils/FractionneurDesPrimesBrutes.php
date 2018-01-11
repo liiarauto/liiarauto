@@ -35,22 +35,22 @@ class FractionneurDesPrimesBrutes extends Controller
 
         if($categorie==3)
         {
-            return (($rc*10)/100)*$nbMois/12;
+            return ceil((($rc*10)/100)*$nbMois/12);
         }
         elseif($categorie==5)
         {
-            return 3000*$nbMois/12;
+            return ceil(3000*$nbMois/12);
         }
         else
         {
-            return 7950*$nbMois/12;
+            return ceil(7950*$nbMois/12);
         }
     }
 
     public function incendie($categorie, $sousCategorie=1, $valeurVenale, $nbMois)
     {
         $primeBruteIncendie = $this->primesBrutes->incendie($categorie, $sousCategorie=1, $valeurVenale);
-        return $primeBruteIncendie*$nbMois/12;
+        return ceil($primeBruteIncendie*$nbMois/12);
     }
 
     /**
@@ -69,7 +69,7 @@ class FractionneurDesPrimesBrutes extends Controller
     public function brisDeGlaces($categorie, $valeurNeuve, $nbMois)
     {
         $primeBruteBDG = $this->primesBrutes->brisDeGlaces($categorie, $valeurNeuve);
-        return $primeBruteBDG*$nbMois/12;
+        return ceil($primeBruteBDG*$nbMois/12);
     }
 
     /**
@@ -78,7 +78,7 @@ class FractionneurDesPrimesBrutes extends Controller
     public function avanceSurRecours($nbMois)
     {
         $primeBruteASR = $this->primesBrutes->avanceSurRecours();
-        return $primeBruteASR*$nbMois/12;
+        return ceil($primeBruteASR*$nbMois/12);
     }
 
     /**
@@ -87,12 +87,6 @@ class FractionneurDesPrimesBrutes extends Controller
     public function indPersonnesTransportees($nbPlaces, $formule=1, $nbMois)
     {
         $primeBruteIPT = $this->primesBrutes->indPersonnesTransportees($nbPlaces, $formule);
-        return $primeBruteIPT*$nbMois/12;
-    }
-
-    public function testIndPersonnesTransportee()
-    {
-        $r = $this->primesFractionnees->indPersonnesTransportees(5,1,6);
-        return $this->assertEquals(2950,$r);
+        return ceil($primeBruteIPT*$nbMois/12);
     }
 }

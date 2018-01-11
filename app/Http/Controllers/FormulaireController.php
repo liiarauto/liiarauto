@@ -51,26 +51,66 @@ class FormulaireController extends Controller
         $categorie = $request['vehicule']['categorie'];
         $puissance = $request['vehicule']['puissance'];
         $energie = $request['vehicule']['energie'];
+        $valeurV = $request['vehicule']['valeur_venale'];
+        $valeurN = $request['vehicule']['valeur_neuve'];
         $zone = $request['vehicule']['zone'];
         $nbMois = $request['contrat']['periodicite'];
         $nbPersonnes = $request['vehicule']['nombre_places_assises'];
         $chargeUtile = 20;
-        $data = array();
 
         $this->data['contrat'] = $request['contrat'];
         $this->data['vehicule'] = $request['vehicule'];
         $this->data['souscripteur'] = $request['souscripteur'];
         $this->data['garantie'] = $request['garantie'];
-        // return compact('request');
-        // return $request;
-        if($request['garantie']['rc']=="on")
+
+        if(isset($request['garantie']['rc']))
         {
+            $r['garantie'] = "Responsabilité civile";
             $r['brute'] = $this->primesBrutes->rC($categorie,$puissance,$energie,$chargeUtile,$nbPersonnes,$zone);
             $r['fractionnee'] = $this->primesFractionnees->rC($categorie,$puissance,$energie,$chargeUtile,$nbPersonnes,$zone,$nbMois);
             $this->data['garanties']['rc'] = $r;
-            // return $r;
-            // return compact('result');
         }
+
+        if(isset($request['garantie']['bris_glaces']))
+        {
+            $r['garantie'] = "Bris de glaces";
+            $r['brute'] = $this->primesBrutes->brisDeGlaces($categorie,16000000);
+            $r['fractionnee'] = $this->primesFractionnees->brisDeGlaces($categorie,16000000,$nbMois);
+            $this->data['garanties']['bris_glace'] = $r;
+        }
+
+        if(isset($request['garantie']['incendie']))
+        {
+            $r['garantie'] = "Incendie";
+            $r['brute'] = $this->primesBrutes->incendie($categorie,1,$valeurV);
+            $r['fractionnee'] = $this->primesFractionnees->incendie($categorie,1,$valeurV,$nbMois);
+            $this->data['garanties']['incendie'] = $r;
+        }
+        
+        if(isset($request['garantie']['avance_recours']))
+        {
+            $r['garantie'] = "Avance sur recours";
+            $r['brute'] = $this->primesBrutes->avanceSurRecours();
+            $r['fractionnee'] = $this->primesFractionnees->avanceSurRecours($nbMois);
+            $this->data['garanties']['avance_recours'] = $r;
+        }
+        
+        if(isset($request['garantie']['defense_recours']))
+        {
+            $r['garantie'] = "Défense et recours";
+            $r['brute'] = $this->primesBrutes->defenseEtRecours($categorie);
+            $r['fractionnee'] = $this->primesFractionnees->defenseEtRecours($categorie, $puissance, $energie, $chargeUtile, $nbPersonnes, $zone, $nbMois);
+            $this->data['garanties']['defense_recours'] = $r;
+        }
+
+        if(isset($request['garantie']['personnes_transportees']))
+        {
+            $r['garantie'] = "Personnes transportées";
+            $r['brute'] = $this->primesBrutes->indPersonnesTransportees($nbPersonnes, 1);
+            $r['fractionnee'] = $this->primesFractionnees->indPersonnesTransportees($nbPersonnes, 1, $nbMois);
+            $this->data['garanties']['personnes_transportees'] = $r;
+        }
+        
         $result = $this->data;
         // return $result;
         // return compact('result');

@@ -183,7 +183,7 @@ Facebook: 		https://www.facebook.com/fh5co
                             </div>
                             <div class="col-lg-4">
                                 <div class="form-group">
-                                    <input name="garantie[bris_glace]" type="checkbox" aria-label="..."> Bris de glaces
+                                    <input name="garantie[bris_glaces]" type="checkbox" aria-label="..."> Bris de glaces
                                 </div>
                             </div>
                             <div class="col-lg-4">
@@ -198,7 +198,7 @@ Facebook: 		https://www.facebook.com/fh5co
                             </div>
                             <div class="col-lg-4">
                                 <div class="form-group">
-                                    <input name="garantie[personnes_transportees]" type="checkbox" aria-label="..."> Avance sur recours
+                                    <input name="garantie[avance_recours]" type="checkbox" aria-label="..."> Avance sur recours
                                 </div>
                             </div>
                         </div>
@@ -245,6 +245,12 @@ Facebook: 		https://www.facebook.com/fh5co
                                 <input name="vehicule[date_premiere_mise_circulation]" type="date" class="form-control ivplate">
                             </div>
                         </div>
+                        <div class="form-group">
+                                <div class="input-group col-md-12">
+                                    <label for="car_price">valeur neuve</label>
+                                    <input type="number" name="vehicule[valeur_neuve]" id="car_price" class="form-control car_price"/>
+                                </div>
+                            </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
@@ -298,6 +304,12 @@ Facebook: 		https://www.facebook.com/fh5co
                                     <option value="2">Zone 2</option>
                                     <option value="3">Zone 3</option>
                                 </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group col-md-12">
+                                <label for="">valeur vénale</label>
+                                <input type="number" name="vehicule[valeur_venale]" id="car_price" class="form-control "/>
                             </div>
                         </div>
                     </div>
