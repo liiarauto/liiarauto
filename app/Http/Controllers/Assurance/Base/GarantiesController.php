@@ -1,9 +1,10 @@
 <?php
 
-namespace LiiarAuto\Http\Controllers\Assurance;
+namespace LiiarAuto\Http\Controllers\Assurance\Base;
 
 use Illuminate\Http\Request;
 use LiiarAuto\Http\Controllers\Controller as Controller;
+use LiiarAuto\Http\Controllers\Assurance\Base\DevisController as DevisController;
 
 class GarantiesController extends Controller
 {
@@ -69,10 +70,7 @@ class GarantiesController extends Controller
     {
         return 15000;
     }
-
-    /**
-     * Personnes tranportées ou Sécurité routière
-     */
+    
     public function indPersonnesTransportees($nbPlace, $formule=1)
     {
         return $this->devis->personnesTransportees($nbPlace, $formule);

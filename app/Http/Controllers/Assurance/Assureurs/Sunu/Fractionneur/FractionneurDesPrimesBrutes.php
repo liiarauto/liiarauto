@@ -1,11 +1,11 @@
 <?php
 
-namespace LiiarAuto\Http\Controllers\Assurance\Outils;
+namespace LiiarAuto\Http\Controllers\Assurance\Assureurs\Sunu\Fractionneur;
 
 use Illuminate\Http\Request;
 use LiiarAuto\Http\Controllers\Controller;
-use LiiarAuto\Http\Controllers\Assurance\DevisController as Devis;
-use LiiarAuto\Http\Controllers\Assurance\PrimesBrutesController as PrimesBrutes;
+use LiiarAuto\Http\Controllers\Assurance\Base\DevisController as Devis;
+use LiiarAuto\Http\Controllers\Assurance\Base\PrimesBrutesController as PrimesBrutes;
 
 class FractionneurDesPrimesBrutes extends Controller
 {

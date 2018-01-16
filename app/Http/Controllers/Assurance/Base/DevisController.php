@@ -1,6 +1,6 @@
 <?php
 
-namespace LiiarAuto\Http\Controllers\Assurance;
+namespace LiiarAuto\Http\Controllers\Assurance\Base;
 
 use Illuminate\Http\Request;
 use LiiarAuto\Http\Controllers\Controller as Controller;

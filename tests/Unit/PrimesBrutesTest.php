@@ -5,8 +5,8 @@ namespace Tests\Unit;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use LiiarAuto\Http\Controllers\Assurance\GarantiesController as GarantiesController;
-use LiiarAuto\Http\Controllers\Assurance\PrimesBrutesController as PrimesBrutesController;
+use LiiarAuto\Http\Controllers\Assurance\Base\GarantiesController as GarantiesController;
+use LiiarAuto\Http\Controllers\Assurance\Base\PrimesBrutesController as PrimesBrutesController;
 
 class GarantiesTest extends TestCase
 {

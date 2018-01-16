@@ -6,7 +6,7 @@ use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-use LiiarAuto\Http\Controllers\Assurance\PrimesFractionneesController as PrimesFractionneesController;
+use LiiarAuto\Http\Controllers\Assurance\Assureurs\Sunu\PrimesFractionneesController as PrimesFractionneesController;
 
 class PrimesFractionneesTest extends TestCase
 {

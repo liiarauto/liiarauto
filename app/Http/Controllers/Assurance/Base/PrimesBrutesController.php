@@ -1,12 +1,12 @@
 <?php
 
-namespace LiiarAuto\Http\Controllers\Assurance;
+namespace LiiarAuto\Http\Controllers\Assurance\Base;
 
 use Illuminate\Http\Request;
 use LiiarAuto\Http\Controllers\Controller as Controller;
 
-use LiiarAuto\Http\Controllers\Assurance\DevisController as DevisController;
-use LiiarAuto\Http\Controllers\Assurance\GarantiesController as GarantiesController;
+use LiiarAuto\Http\Controllers\Assurance\Base\DevisController as DevisController;
+use LiiarAuto\Http\Controllers\Assurance\Base\GarantiesController as GarantiesController;
 
 class PrimesBrutesController extends Controller
 {
@@ -17,15 +17,7 @@ class PrimesBrutesController extends Controller
         $this->devis = new DevisController();
         $this->garanties = new GarantiesController();
     }
-
-    /**
-     * @param Categorie
-     * @param Puissance
-     * @param Energie
-     * @param ChargeUtile
-     * @param nbPersonnes
-     * @param Zone
-     */
+    
     public function rC($categorie, $puissance, $energie, $chargeUtile, $nbPersonnes, $zone)
     {
         return $this->devis->rcCat01($categorie, $puissance, $energie, $chargeUtile, $nbPersonnes, $zone);

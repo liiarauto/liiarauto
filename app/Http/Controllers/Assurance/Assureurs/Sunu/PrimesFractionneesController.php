@@ -1,12 +1,12 @@
 <?php
 
-namespace LiiarAuto\Http\Controllers\Assurance;
+namespace LiiarAuto\Http\Controllers\Assurance\Assureurs\Sunu;
 
 use Illuminate\Http\Request;
 use LiiarAuto\Http\Controllers\Controller as Controller;
 
-use LiiarAuto\Http\Controllers\Assurance\DevisController as DevisController;
-use LiiarAuto\Http\Controllers\Assurance\Outils\FractionneurDesPrimesBrutes as FPB;
+use LiiarAuto\Http\Controllers\Assurance\Base\DevisController as DevisController;
+use LiiarAuto\Http\Controllers\Assurance\Assureurs\Sunu\Fractionneur\FractionneurDesPrimesBrutes as FPB;
 
 
 

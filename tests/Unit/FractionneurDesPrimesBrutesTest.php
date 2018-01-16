@@ -6,7 +6,7 @@ use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-use LiiarAuto\Http\Controllers\Assurance\Outils\FractionneurDesPrimesBrutes as FPB;
+use LiiarAuto\Http\Controllers\Assurance\Assureurs\Sunu\Fractionneur\FractionneurDesPrimesBrutes as FPB;
 
 class FractionneurDePrimesBrutesTest extends TestCase
 {
