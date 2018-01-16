@@ -9,7 +9,9 @@ use LiiarAuto\Http\Controllers\Assurance\Base\DevisController as DevisController
 use LiiarAuto\Http\Controllers\Assurance\Assureurs\Sunu\Fractionneur\FractionneurDesPrimesBrutes as FPB;
 
 
-
+/**
+ * Cette classe représente la colonne AG et ses calculs
+ */
 class PrimesFractionneesController extends Controller
 {
     protected $fractionneur;

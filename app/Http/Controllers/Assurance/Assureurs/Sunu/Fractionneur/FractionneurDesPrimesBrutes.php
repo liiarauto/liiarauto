@@ -7,6 +7,13 @@ use LiiarAuto\Http\Controllers\Controller;
 use LiiarAuto\Http\Controllers\Assurance\Base\DevisController as Devis;
 use LiiarAuto\Http\Controllers\Assurance\Base\PrimesBrutesController as PrimesBrutes;
 
+/**
+ * Cette classe représente la colonne AE et ses calculs
+ * 
+ * Note: les fonctionnalités
+ * Car-Stop et Collegue ne sont pas nécessaires
+ * car la saisie n'est pas faite chez l'assureur
+ */
 class FractionneurDesPrimesBrutes extends Controller
 {
     protected $devis;
