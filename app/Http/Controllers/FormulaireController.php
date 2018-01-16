@@ -74,8 +74,8 @@ class FormulaireController extends Controller
         if(isset($request['garantie']['bris_glaces']))
         {
             $r['garantie'] = "Bris de glaces";
-            $r['brute'] = $this->primesBrutes->brisDeGlaces($categorie,16000000);
-            $r['fractionnee'] = $this->primesFractionnees->brisDeGlaces($categorie,16000000,$nbMois);
+            $r['brute'] = $this->primesBrutes->brisDeGlaces($categorie,$valeurN);
+            $r['fractionnee'] = $this->primesFractionnees->brisDeGlaces($categorie,$valeurN,$nbMois);
             $this->data['garanties']['bris_glace'] = $r;
         }
 
