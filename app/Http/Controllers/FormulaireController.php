@@ -4,8 +4,8 @@ namespace LiiarAuto\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use LiiarAuto\Http\Controllers\Assurance\PrimesBrutesController as PB;
-use LiiarAuto\Http\Controllers\Assurance\PrimesFractionneesController as PF;
+use LiiarAuto\Http\Controllers\Assurance\Base\PrimesBrutesController as PB;
+use LiiarAuto\Http\Controllers\Assurance\Assureurs\Sunu\PrimesFractionneesController as PF;
 
 class FormulaireController extends Controller
 {
