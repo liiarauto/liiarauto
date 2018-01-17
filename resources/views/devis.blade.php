@@ -80,6 +80,10 @@ Facebook: 		https://www.facebook.com/fh5co
         .v {
             margin-bottom: 0px;
         }
+
+        .b-table{
+            text-align:right;
+        }
     </style>
 
 </head>
@@ -308,6 +312,64 @@ Facebook: 		https://www.facebook.com/fh5co
                         </div>
                     </div>
                 </div>
+                <div class="panel panel-default col-md-4 col-md-offset-6 animate-box" data-animate-effect="fadeIn">
+                        <div class="panel-heading">
+                            <h3 class="panel-title lead" style="font-weight:bolder">DECOMPTE DES PRIMES</h3>
+                        </div>
+                        <div class="panel-body">
+                            <table class="" style="width:100%">
+                                <tr>
+                                    <td>
+                                        <p>Prime nette</p>
+                                    </td>
+                                    <td class="b-table">
+                                        <p>{{$bilan['somme_primes_nettes']}}</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Accessoires</p>
+                                    </td>
+                                    <td class="b-table">
+                                        <p>{{$bilan['accessoires']}}</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Taxes&nbsp;&nbsp;</p>
+                                    </td>
+                                    <td class="b-table">
+                                        <p>{{$bilan['taxes']}}</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>FGA&nbsp;&nbsp;</p>
+                                    </td>
+                                    <td class="b-table">
+                                        <p>{{$bilan['fga']}}</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>CEDEAO&nbsp;&nbsp;</p>
+                                    </td>
+                                    <td class="b-table">
+                                        <p>{{$bilan['cedeao']}}</p>
+                                    </td>
+                                </tr>
+                                <tr style="font-weight:bolder">
+                                    <td>
+                                        <p>PRIME TTC&nbsp;&nbsp;</p>
+                                    </td>
+                                    <td class="b-table">
+                                        <p>{{$bilan['primettc']}}</p>
+                                    </td>
+                                </tr>
+
+                            </table>
+                        </div>
+                    </div>
                 <div class="panel panel-default col-md-8 col-md-offset-2 animate-box" data-animate-effect="fadeIn">
                     <div class="panel-heading">Validation du contrat</div>
                     <div class="panel-body">
