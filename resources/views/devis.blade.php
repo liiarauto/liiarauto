@@ -291,6 +291,7 @@ Facebook: 		https://www.facebook.com/fh5co
                                         <td>Franchises</td>
                                         <td>Primes annuelles</td>
                                         <td>Primes périodiques</td>
+                                        <td>Primes nettes</td>
                                     </tr>
                                 </thead>
                                 <?php $i=1 ?> @foreach($garanties as $garantie)
@@ -300,6 +301,7 @@ Facebook: 		https://www.facebook.com/fh5co
                                     <td>-</td>
                                     <td>{{$garantie['brute']}}</td>
                                     <td>{{$garantie['fractionnee']}}</td>
+                                    <td>{{$garantie['nette']}}</td>
                                 </tr>
                                 @endforeach
                             </table>

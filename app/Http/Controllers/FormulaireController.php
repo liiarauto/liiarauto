@@ -6,17 +6,20 @@ use Illuminate\Http\Request;
 
 use LiiarAuto\Http\Controllers\Assurance\Base\PrimesBrutesController as PB;
 use LiiarAuto\Http\Controllers\Assurance\Assureurs\Sunu\PrimesFractionneesController as PF;
+use LiiarAuto\Http\Controllers\Assurance\Assureurs\Sunu\PrimesNettesController as PN;
 
 class FormulaireController extends Controller
 {
     protected $data;
     protected $primesBrutes;
     protected $primesFractionnees;
+    protected $primesNettes;
 
     public function __construct()
     {
         $this->primesBrutes = new PB();
         $this->primesFractionnees = new PF();
+        $this->primesNettes = new PN();
         $this->data = array();
     }
 
@@ -68,6 +71,7 @@ class FormulaireController extends Controller
             $r['garantie'] = "Responsabilité civile";
             $r['brute'] = $this->primesBrutes->rC($categorie,$puissance,$energie,$chargeUtile,$nbPersonnes,$zone);
             $r['fractionnee'] = $this->primesFractionnees->rC($categorie,$puissance,$energie,$chargeUtile,$nbPersonnes,$zone,$nbMois);
+            $r['nette'] = $this->primesNettes->rC($r['fractionnee'],0.05,0,0.2);
             $this->data['garanties']['rc'] = $r;
         }
 
@@ -76,6 +80,7 @@ class FormulaireController extends Controller
             $r['garantie'] = "Bris de glaces";
             $r['brute'] = $this->primesBrutes->brisDeGlaces($categorie,$valeurN);
             $r['fractionnee'] = $this->primesFractionnees->brisDeGlaces($categorie,$valeurN,$nbMois);
+            $r['nette'] = $this->primesNettes->brisDeGlaces($r['fractionnee'],0.05,0.2,0.2,0.05);
             $this->data['garanties']['bris_glace'] = $r;
         }
 
@@ -84,6 +89,7 @@ class FormulaireController extends Controller
             $r['garantie'] = "Incendie";
             $r['brute'] = $this->primesBrutes->incendie($categorie,1,$valeurV);
             $r['fractionnee'] = $this->primesFractionnees->incendie($categorie,1,$valeurV,$nbMois);
+            $r['nette'] = $this->primesNettes->incendie($r['fractionnee'],0.05,0.2,0.2,0.05);
             $this->data['garanties']['incendie'] = $r;
         }
         
@@ -92,6 +98,7 @@ class FormulaireController extends Controller
             $r['garantie'] = "Avance sur recours";
             $r['brute'] = $this->primesBrutes->avanceSurRecours();
             $r['fractionnee'] = $this->primesFractionnees->avanceSurRecours($nbMois);
+            $r['nette'] = $this->primesNettes->avanceSurRecours($r['fractionnee'],0.05,0.2,0.2,0.05);
             $this->data['garanties']['avance_recours'] = $r;
         }
         
@@ -100,6 +107,7 @@ class FormulaireController extends Controller
             $r['garantie'] = "Défense et recours";
             $r['brute'] = $this->primesBrutes->defenseEtRecours($categorie);
             $r['fractionnee'] = $this->primesFractionnees->defenseEtRecours($categorie, $puissance, $energie, $chargeUtile, $nbPersonnes, $zone, $nbMois);
+            $r['nette'] = $this->primesNettes->defenseEtRecours($r['fractionnee'],0.05,0,0.2);
             $this->data['garanties']['defense_recours'] = $r;
         }
 
@@ -108,6 +116,7 @@ class FormulaireController extends Controller
             $r['garantie'] = "Personnes transportées";
             $r['brute'] = $this->primesBrutes->indPersonnesTransportees($nbPersonnes, 1);
             $r['fractionnee'] = $this->primesFractionnees->indPersonnesTransportees($nbPersonnes, 1, $nbMois);
+            $r['nette'] = $this->primesNettes->indPersonnesTransportees($r['fractionnee']);
             $this->data['garanties']['personnes_transportees'] = $r;
         }
         
