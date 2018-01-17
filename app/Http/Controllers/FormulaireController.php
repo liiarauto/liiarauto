@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use LiiarAuto\Http\Controllers\Assurance\Base\PrimesBrutesController as PB;
 use LiiarAuto\Http\Controllers\Assurance\Assureurs\Sunu\PrimesFractionneesController as PF;
 use LiiarAuto\Http\Controllers\Assurance\Assureurs\Sunu\PrimesNettesController as PN;
+use LiiarAuto\Http\Controllers\Assurance\Assureurs\Sunu\BilanController as Bilan;
 
 class FormulaireController extends Controller
 {
@@ -14,6 +15,7 @@ class FormulaireController extends Controller
     protected $primesBrutes;
     protected $primesFractionnees;
     protected $primesNettes;
+    protected $bilan;
 
     public function __construct()
     {
@@ -21,6 +23,7 @@ class FormulaireController extends Controller
         $this->primesFractionnees = new PF();
         $this->primesNettes = new PN();
         $this->data = array();
+        $this->bilan = new Bilan();
     }
 
     /**
@@ -65,6 +68,8 @@ class FormulaireController extends Controller
         $this->data['vehicule'] = $request['vehicule'];
         $this->data['souscripteur'] = $request['souscripteur'];
         $this->data['garantie'] = $request['garantie'];
+        //$this->bilan['somme_primes_fractionnees'] = 0;
+        //$this->bilan['somme_primes_nettes'] = 0;
 
         if(isset($request['garantie']['rc']))
         {
@@ -72,6 +77,9 @@ class FormulaireController extends Controller
             $r['brute'] = $this->primesBrutes->rC($categorie,$puissance,$energie,$chargeUtile,$nbPersonnes,$zone);
             $r['fractionnee'] = $this->primesFractionnees->rC($categorie,$puissance,$energie,$chargeUtile,$nbPersonnes,$zone,$nbMois);
             $r['nette'] = $this->primesNettes->rC($r['fractionnee'],0.05,0,0.2);
+            $this->bilan->sommeFractionnee($r['fractionnee']);
+            $this->bilan->sommeNette($r['nette']);
+            $this->bilan->setFga($r['nette']);
             $this->data['garanties']['rc'] = $r;
         }
 
@@ -81,6 +89,8 @@ class FormulaireController extends Controller
             $r['brute'] = $this->primesBrutes->brisDeGlaces($categorie,$valeurN);
             $r['fractionnee'] = $this->primesFractionnees->brisDeGlaces($categorie,$valeurN,$nbMois);
             $r['nette'] = $this->primesNettes->brisDeGlaces($r['fractionnee'],0.05,0.2,0.2,0.05);
+            $this->bilan->sommeFractionnee($r['fractionnee']);
+            $this->bilan->sommeNette($r['nette']);
             $this->data['garanties']['bris_glace'] = $r;
         }
 
@@ -90,6 +100,8 @@ class FormulaireController extends Controller
             $r['brute'] = $this->primesBrutes->incendie($categorie,1,$valeurV);
             $r['fractionnee'] = $this->primesFractionnees->incendie($categorie,1,$valeurV,$nbMois);
             $r['nette'] = $this->primesNettes->incendie($r['fractionnee'],0.05,0.2,0.2,0.05);
+            $this->bilan->sommeFractionnee($r['fractionnee']);
+            $this->bilan->sommeNette($r['nette']);
             $this->data['garanties']['incendie'] = $r;
         }
         
@@ -99,6 +111,8 @@ class FormulaireController extends Controller
             $r['brute'] = $this->primesBrutes->avanceSurRecours();
             $r['fractionnee'] = $this->primesFractionnees->avanceSurRecours($nbMois);
             $r['nette'] = $this->primesNettes->avanceSurRecours($r['fractionnee'],0.05,0.2,0.2,0.05);
+            $this->bilan->sommeFractionnee($r['fractionnee']);
+            $this->bilan->sommeNette($r['nette']);
             $this->data['garanties']['avance_recours'] = $r;
         }
         
@@ -108,6 +122,8 @@ class FormulaireController extends Controller
             $r['brute'] = $this->primesBrutes->defenseEtRecours($categorie);
             $r['fractionnee'] = $this->primesFractionnees->defenseEtRecours($categorie, $puissance, $energie, $chargeUtile, $nbPersonnes, $zone, $nbMois);
             $r['nette'] = $this->primesNettes->defenseEtRecours($r['fractionnee'],0.05,0,0.2);
+            $this->bilan->sommeFractionnee($r['fractionnee']);
+            $this->bilan->sommeNette($r['nette']);
             $this->data['garanties']['defense_recours'] = $r;
         }
 
@@ -117,9 +133,20 @@ class FormulaireController extends Controller
             $r['brute'] = $this->primesBrutes->indPersonnesTransportees($nbPersonnes, 1);
             $r['fractionnee'] = $this->primesFractionnees->indPersonnesTransportees($nbPersonnes, 1, $nbMois);
             $r['nette'] = $this->primesNettes->indPersonnesTransportees($r['fractionnee']);
+            $this->bilan->sommeFractionnee($r['fractionnee']);
+            $this->bilan->sommeNette($r['nette']);
             $this->data['garanties']['personnes_transportees'] = $r;
         }
         
+        /**
+         * Obtention du blian
+         */
+        $this->bilan->setAccessoires($categorie, $nbMois);
+        $this->data['bilan'] = $this->bilan->getBilan();
+
+        /**
+         * Resultat final
+         */
         $result = $this->data;
         // return $result;
         // return compact('result');
