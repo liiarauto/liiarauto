@@ -354,7 +354,7 @@ h1, h2, h3, h4, h5, h6, figure {
   z-index: 1001;
   width: 100%;
   margin: 0px 0 0 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: #FFB74D;
 }
 @media screen and (max-width: 768px) {
   #fh5co-header {
@@ -1677,3 +1677,63 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 /*# sourceMappingURL=style.css.map */
+
+.jobs__item{
+  padding: 10px;
+  border-color: #2ca02c;
+}
+.jobs__item a{
+  text-decoration: none;
+  color:black;
+}
+.jobs__item__title{
+  font-size: 30px;
+  margin-left: 20px;
+  margin-top:0px ;
+
+}
+#alimentation{
+  background-color: #FFF9C4;
+  height: 200px;
+}
+#renovation{
+  background-color: #F0F4C3;
+  height: 200px;
+}
+#reparation{
+  background-color: #FFE0B2;
+  height: 200px;
+
+}
+#prestation{
+  background-color: #C8E6C9;
+  height: 200px;
+
+
+}
+.jobs__item__cover{
+  padding-top: 20px;
+  -webkit-transition: all 1s ease; /* Safari et Chrome */
+  -moz-transition: all 1s ease; /* Firefox */
+  -ms-transition: all 1s ease; /* Internet Explorer 9 */
+  -o-transition: all 1s ease; /* Opera */
+  transition: all 1s ease;
+}
+
+#button_ali ,#button_app,#button_presta,#button_renov {
+  width: 100px;
+  height: 80px;
+  background-color: transparent;
+  color: white;
+}
+
+.jobs__filter{
+  width: auto;
+  height: 100px;
+}
+
+#bouton a{
+  text-decoration: none;
+  width: 100px;
+  height: 80px;
+}
