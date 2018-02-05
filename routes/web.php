@@ -12,13 +12,18 @@
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('pages/index');
 });
 
 Route::get('domaines', function () {
-    return view('domaines');
+    return view('pages/domaines');
 });
 
 Route::resource('formulaire', 'FormulaireController');
 Route::resource('test', 'TestController');
 Route::resource('devis', 'TestController');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+

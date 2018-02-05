@@ -501,6 +501,7 @@ h1, h2, h3, h4, h5, h6, figure {
   background: #fff;
   color: #118DF0;
 }
+
 #fh5co-header nav ul li.cta a:hover:after {
   display: none;
 }
@@ -518,7 +519,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 #fh5co-hero {
-  min-height: 700px;
+  min-height: 300px;
   background: #fff url(../images/loader.gif) no-repeat center center;
 }
 #fh5co-hero .flexslider {
@@ -534,7 +535,7 @@ h1, h2, h3, h4, h5, h6, figure {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
-  min-height: 700px;
+  height: 300px;
 }
 #fh5co-hero .flexslider .flex-control-nav {
   bottom: 40px;
@@ -557,13 +558,13 @@ h1, h2, h3, h4, h5, h6, figure {
 #fh5co-hero .flexslider .fh5co-property-brief {
   display: table;
   opacity: 0;
-  min-height: 700px;
+  min-height: 300px;
   width: 100%;
 }
 #fh5co-hero .flexslider .fh5co-property-brief .fh5co-property-brief-inner {
   display: table-cell;
   vertical-align: middle;
-  min-height: 700px;
+  min-height: 300px;
   width: 100%;
 }
 #fh5co-hero .flexslider .fh5co-property-brief .fh5co-property-brief-inner .fh5co-box {
@@ -1290,15 +1291,14 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 #fh5co-footer {
-  padding: 7em 0;
+  padding-top: 20px;
   float: left;
   width: 100%;
-  position: relative;
   background: #333333;
 }
 @media screen and (max-width: 768px) {
   #fh5co-footer {
-    padding: 3em 0;
+    padding: 1em 0;
   }
 }
 #fh5co-footer h2, #fh5co-footer h3, #fh5co-footer h4 {
@@ -1311,13 +1311,13 @@ h1, h2, h3, h4, h5, h6, figure {
   font-weight: bold;
 }
 #fh5co-footer [class*="col"] {
-  padding-bottom: 30px;
+  padding-bottom: 2px;
 }
 #fh5co-footer .btn {
   color: #fff;
 }
 #fh5co-footer .float {
-  float: left;
+
   margin-right: 10%;
 }
 #fh5co-footer ul {
@@ -1688,31 +1688,48 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 .jobs__item__title{
   font-size: 30px;
-  margin-left: 20px;
-  margin-top:0px ;
+  margin: 5px;
 
 }
-#alimentation{
-  background-color: #FFF9C4;
+
+#souscription{
+  background-color: transparent;
+  border-top-color: #0000F0;
   height: 200px;
 }
-#renovation{
-  background-color: #F0F4C3;
+
+#sinistre{
+  background-color: transparent;
+  border-top-color: #0000F0;
   height: 200px;
 }
-#reparation{
-  background-color: #FFE0B2;
-  height: 200px;
 
+#auto
+{
+  border-top: solid #078CD6 1em;
 }
-#prestation{
-  background-color: #C8E6C9;
-  height: 200px;
 
+#bank
+{
+  border-top: solid #00AEBB 1em;
+}
 
+#sante
+{
+  border-top: solid #C6411E 1em;
+}
+#img_jobs
+{
+  height: 90px;
+  width: 90px;
+  margin-bottom: 20px;
+}
+#habitation
+{
+  border-top: solid #F59829 1em;
 }
 .jobs__item__cover{
-  padding-top: 20px;
+  margin: 5px;
   -webkit-transition: all 1s ease; /* Safari et Chrome */
   -moz-transition: all 1s ease; /* Firefox */
   -ms-transition: all 1s ease; /* Internet Explorer 9 */
@@ -1727,13 +1744,8 @@ h1, h2, h3, h4, h5, h6, figure {
   color: white;
 }
 
-.jobs__filter{
-  width: auto;
-  height: 100px;
-}
-
 #bouton a{
   text-decoration: none;
-  width: 100px;
-  height: 80px;
+  width: 50px;
+  height: 50px;
 }

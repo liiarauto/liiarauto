@@ -1,4 +1,4 @@
-@extends('autre_template')
+@extends('layout.autre_template')
 @section('content')
 
 	<div id="fh5co-blog" style="padding-top:60px!important">

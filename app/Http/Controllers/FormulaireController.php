@@ -13,7 +13,7 @@ class FormulaireController extends Controller
      */
     public function index()
     {
-        return view('formulaire');
+        return view('pages/formulaire');
     }
 
     /**
@@ -35,7 +35,8 @@ class FormulaireController extends Controller
     public function store(Request $request)
     {
         // return $request;
-        return view('devis', $request);
+
+        return view('pages/devis', $request);
     }
 
     /**

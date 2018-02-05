@@ -2,22 +2,24 @@
 
 	<div class="container code">
 			    <div class="col-md-12">
+					<hr class="divider">
 					<div style="margin-top:50px;" class="text-center text-center fh5co-heading animate-box" data-animate-effect="fadeIn">
-						<h2 class="featurette-heading">Souscrivez à une police d'assurance en toute simplicité</h2>
+						<h2 class="featurette-heading"><b>Bonjour et bienvenue !</b> Comment pouvons nous vous aider ?</h2>
 						<h4 class="text-muted">Chez l'assureur de votre choix</h4>
 					</div>
 					<br>
 					<div class="row text-center">
-						<div class="jobs__item col-sm-7 col-md-7  panel panel-default">
-								<div class="jobs__item__cover" id="prestation">
+						<div class="jobs__item col-md-7  panel panel-default">
+							<a href="" >
+								<div class="jobs__item__cover" id="souscription">
 									<div class='jobs__filter'>
 										<div class='jobs__item__title' style="font-size:10px">
 											<div class="row">
 												<div class="col-md-6">
 													<img src="/images/icon_auto.png" width="200px" height="128px"><br>
-													<a href=""><button class='btn '>Souscrivez à une assurance auto</button></a>
+													<a href=""><button class='btn btn-default '>Souscrivez à une assurance auto</button></a>
 												</div>
-												<div class="col-md-4">
+												<div class="col-md-6">
 													<p>
 													<div id="infos_auto">
 														<h5>2 mois gratuits</h5>
@@ -30,25 +32,26 @@
 										</div>
 									</div>
 								</div>
+							</a>
 						</div>
 						<div class='jobs__item col-sm-5 col-md-5 '>
 							<a href="" >
-								<div class="jobs__item__cover" id="renovation" >
-									<div class='jobs__filter'>
-										<div class='jobs__item__title' style="font-size:22px">
-											<div class="row">
-												<div class="col-md-5">
-													<img src="/images/sinistre.png"><br>
-													<button class='btn'>Declarer un sinistre</button>
-												</div>
-												<div class="col-md-5">
+									<div class="jobs__item__cover" id="sinistre" >
+										<div class='jobs__filter'>
+											<div class='jobs__item__title' style="font-size:22px">
+												<div class="row">
+													<div class="col-md-7">
+														<img src="/images/sinistre.png"><br>
+														<a href=""><button class='form-control'>Declarer un sinistre</button></a>
+													</div>
+													<div class="col-md-5">
 
+													</div>
 												</div>
+
 											</div>
-
 										</div>
 									</div>
-								</div>
 							</a>
 						</div>
 					</div>

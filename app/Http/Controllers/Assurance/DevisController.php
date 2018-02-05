@@ -7,6 +7,7 @@ use LiiarAuto\Http\Controllers\Controller as Controller;
 
 class DevisController extends Controller
 {
+    //fonction de calcul de la prime RC vue sur le formulaire de SUNU alt F11
     public function rcCat01($categorie, $puissance, $energie, $chargeUtile, $nbPersonnes, $zone)
     {
         if($zone=1)
@@ -349,6 +350,7 @@ class DevisController extends Controller
         }
     }
 
+    //Assurance de courtes periodes P 51(Assurance auto theorie et pratique)
     public function fractionPrime($nbMois)
     {
         if (0.5<=$nbMois && $nbMois<=1) { return 0.1; }
@@ -365,6 +367,7 @@ class DevisController extends Controller
         if (11.1<=$nbMois && $nbMois<=9999999) { return 1; }
     }
 
+    //Calcul de la valeur venale
     public function valeurVenale($categorie, $age, $valeurNeuve, $chargeUtile)
     {
         switch ($categorie)
@@ -434,6 +437,7 @@ class DevisController extends Controller
         }
     }
 
+    //Prime de la garantie bris de glace
     public function brisDeGlace($categorie, $valeurNeuve)
     {
         switch ($categorie)

@@ -1,6 +1,7 @@
-@extends('autre_template')
+@extends('layout.autre_template')
 @section('content')
         <div class="container">
+            <br>
             <div class="row">
                 <div class="panel panel-default col-md-4 col-md-offset-2 animate-box" data-animate-effect="fadeIn">
                     <div class="panel-heading">
