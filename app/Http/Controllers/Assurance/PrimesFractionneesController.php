@@ -14,9 +14,11 @@ class PrimesFractionneesController extends Controller
 {
     protected $fractionneur;
     protected $devis;
+    protected $primeBrutes;
 
     public function __construct()
     {
+        $this->primeBrutes=new PrimesBrutesController();
         $this->fractionneur = new FPB();
         $this->devis = new DevisController();
     }
@@ -24,9 +26,9 @@ class PrimesFractionneesController extends Controller
     /**
      * Fonctionnelité Collegue non prise en compte
      */
-    public function rC($categorie, $puissance, $energie, $chargeUtile, $nbPersonnes, $zone, $nbMois)
+    public function rC($categorie, $puissance, $energie, $chargeUtile, $nbPersonnes, $zone, $nbMois,$conduite,$profession)
     {
-        $rcCat01 = $this->devis->rcCat01($categorie, $puissance, $energie, $chargeUtile, $nbPersonnes, $zone);
+        $rcCat01 = $this->primeBrutes->rcCat01($categorie, $puissance, $energie, $chargeUtile, $nbPersonnes, $zone,$conduite,$profession);
         $fractionPrime = $this->devis->fractionPrime($nbMois);
         
         return $this->fractionneur->rC($rcCat01, $fractionPrime);

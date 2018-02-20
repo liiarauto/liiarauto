@@ -2,6 +2,7 @@
 
 namespace LiiarAuto\Http\Controllers\Assurance;
 
+use function Couchbase\defaultDecoder;
 use Illuminate\Http\Request;
 use LiiarAuto\Http\Controllers\Controller as Controller;
 
@@ -324,8 +325,8 @@ class DevisController extends Controller
                         if (3 >  $chargeUtile  && $chargeUtile<=5){ return 170744; }
                         if (5 >  $chargeUtile  && $chargeUtile<=8){ return 220155; }
                         if (8 >  $chargeUtile  && $chargeUtile<=11){ return 234833; }
-                        if (1 >  $chargeUtile1 && $chargeUtile<=13){ return 246066; }
-                        if (1 >  $chargeUtile3 && $chargeUtile<=15){ return 296465; }
+                        if (1 >  $chargeUtile && $chargeUtile<=13){ return 246066; }
+                        if (1 >  $chargeUtile && $chargeUtile<=15){ return 296465; }
                         if ($chargeUtile>15){ return 388194; }
                     break;
 
@@ -612,4 +613,36 @@ class DevisController extends Controller
                 break;
         }
     }
+
+    public function reductionConducteur($rcCat1,$conduite)
+    {
+        $inf=$rcCat1*10/100;
+       $sup=$rcCat1*5/100;
+       if($conduite <=2){
+           return $inf;
+       }else{
+           return $sup;
+       }
+    }
+
+    public function reductionProfession($rcCat1,$profession)
+    {
+        $inf=$rcCat1*10/100;
+        $sup=$rcCat1*5/100;
+        switch ($profession)
+        {
+            case ('religieux' || 'sans emploi' ):
+                return $inf;
+                break;
+            case ('sculpteur' || 'menuisier' || 'bijoutier' || 'agriculteur'):
+                return $sup;
+                break;
+            default:
+                return 0;
+
+        }
+
+    }
+
+
 }

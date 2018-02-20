@@ -3,6 +3,7 @@
 namespace LiiarAuto\Http\Controllers;
 
 use Illuminate\Http\Request;
+use LiiarAuto\Http\Controllers\Assurance\PrimesBrutesController;
 
 class FormulaireController extends Controller
 {
@@ -11,6 +12,14 @@ class FormulaireController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    protected $contrat;
+    protected $souscripteur;
+    protected $vehicule;
+    protected $garantie;
+
+    protected $rc;
+
     public function index()
     {
         return view('pages/formulaire');
@@ -34,7 +43,12 @@ class FormulaireController extends Controller
      */
     public function store(Request $request)
     {
-        // return $request;
+        $this->rc=new PrimesBrutesController();
+
+        $this->contrat=$request->contrat;
+        $this->souscripteur=$request->souscripteur;
+        $this->vehicule=$request->vehicule;
+        $this->garantie=$request->garantie;
 
         return view('pages/devis', $request);
     }
@@ -71,6 +85,7 @@ class FormulaireController extends Controller
     public function update(Request $request, $id)
     {
         //
+
     }
 
     /**

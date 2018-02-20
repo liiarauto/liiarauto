@@ -138,7 +138,7 @@ class DumpDataCollector extends DataCollector implements DataDumperInterface
 
     public function collect(Request $request, Response $response, \Exception $exception = null)
     {
-        // Sub-requests and programmatic calls stay in the collected profile.
+        // Sub-requests and programmatic calls stay in the collected profil.
         if ($this->dumper || ($this->requestStack && $this->requestStack->getMasterRequest() !== $request) || $request->isXmlHttpRequest() || $request->headers->has('Origin')) {
             return;
         }

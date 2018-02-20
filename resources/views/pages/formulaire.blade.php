@@ -5,7 +5,7 @@
     {!! Form::open(['url' => 'formulaire']) !!}
         <div class="container">
             <br>
-            <div class="row">
+            <div class="col-md-12">
                 <div class="panel panel-default col-md-8 col-md-offset-2 animate-box" data-animate-effect="fadeIn">
                     <div class="panel-heading">
                         <h3 class="panel-title">Le Contrat</h3>
@@ -82,7 +82,6 @@
                                     </div>
                                 </div>
                             </div>
-                            {{--
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <div class="input-group">
@@ -122,7 +121,7 @@
                                         <input type="text" class="form-control" value="Responsabilité civile" disabled>
                                     </div>
                                 </div>
-                            </div> --}}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -130,7 +129,7 @@
         </div>
 
         <div class="container">
-            <div class="row">
+            <div class="col-md-12">
                 <div class="panel panel-default col-md-8 col-md-offset-2 animate-box" data-animate-effect="fadeIn">
                     <div class="panel-heading">
                         <h3 class="panel-title">Le Véhicule</h3>
@@ -160,7 +159,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="date">Date de prenière mise en circulation</label>
+                                <label for="date">Date de la premiere mise en circulation</label>
                                 <div class="input-group col-md-12">
                                     <input name="vehicule[date_premiere_mise_circulation]" type="date" class="form-control ivplate">
                                 </div>
@@ -172,7 +171,7 @@
                                 <div class="input-group col-md-12">
                                     <label for="marque"></label>
                                     <select name="vehicule[marque]" id="" class="form-control">
-                                        <option value="Mercrdes">Mercedes</option>
+                                        <option value="Mercedes">Mercedes</option>
                                         <option value="Toyota">Toyota</option>
                                         <option value="BMW">BMW</option>
                                         <option value="Audi">Audi</option>
@@ -183,7 +182,7 @@
                             </div>
                             <div class="form-group">
                                 <div class="input-group col-md-12">
-                                    <label for="puissance">Puissqnce fiscale</label>
+                                    <label for="puissance">Puissance fiscale</label>
                                     <select name="vehicule[puissance]" id="" class="form-control">
                                         <option value="1">1 CV</option>
                                         <option value="2">2 CV</option>
@@ -218,6 +217,12 @@
                                         <option value="2">Zone 2</option>
                                         <option value="3">Zone 3</option>
                                     </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="date">Charge utile</label>
+                                <div class="input-group col-md-12">
+                                    <input name="vehicule[charge_utile]" type="number" class="form-control ivplate">
                                 </div>
                             </div>
                         </div>
@@ -286,8 +291,9 @@
                             </div>
                             <div class="form-group">
                                 <div class="input-group col-md-12">
-                                    <label for="date">Date de délivrance du permis</label>
-                                    <input type="date" name="souscripteur[date_delivrance_permis]" id="" class="form-control" />
+                                    <label for="date">Vous avez eu votre permis en</label>
+                                    <input type="date" name="souscripteur[annee_permis]" id="" class="form-control" />
+
                                 </div>
                             </div>
                         </div>

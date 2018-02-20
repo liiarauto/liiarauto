@@ -26,9 +26,15 @@ class PrimesBrutesController extends Controller
      * @param nbPersonnes
      * @param Zone
      */
-    public function responsabiliteCivile($categorie, $puissance, $energie, $chargeUtile, $nbPersonnes, $zone)
+    public function responsabiliteCivile($categorie, $puissance, $energie, $chargeUtile, $nbPersonnes, $zone,$conduite=null,$profession=null)
     {
-        return $this->devis->rcCat01($categorie, $puissance, $energie, $chargeUtile, $nbPersonnes, $zone);
+        $rcCat1=$this->devis->rcCat01($categorie, $puissance, $energie, $chargeUtile, $nbPersonnes, $zone);
+        $reductionPermis=$this->devis->reductionConducteur($rcCat1,$conduite);
+        $reductionProfession=$this->devis->reductionProfession($rcCat1,$profession);
+
+        $reduction=$reductionPermis + $reductionProfession;
+
+        return $rcCat1-$reduction;
     }
 
     public function defenseEtRecours($categorie, $rcCat01=null, $fractionPrime=null)

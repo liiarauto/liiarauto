@@ -2,6 +2,7 @@
 
 namespace LiiarAuto\Http\Controllers\Auth;
 
+use LiiarAuto\Client_physique;
 use LiiarAuto\User;
 use LiiarAuto\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
@@ -62,10 +63,21 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
-        ]);
+        if($data['courtier']==0)
+        {
+            return User::create([
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'courtier_id'=>$data['identifiant'],
+                'password' => bcrypt($data['password']),
+            ]);
+        }else{
+            return User::create([
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'password' => bcrypt($data['password'])
+            ]);
+        }
+
     }
 }

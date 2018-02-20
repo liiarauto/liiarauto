@@ -19,6 +19,20 @@ Route::get('domaines', function () {
     return view('pages/domaines');
 });
 
+Route::get('/assur', function () {
+    return view('pages/assureur');
+});
+
+
+Route::get('/form_contrat', function () {
+    return view('pages/form_contrat');
+});
+
+Route::get('/dashboard/{id}',[
+   'as'=>'dashboard',
+   'uses'=>'liiarController@dashboard'
+]);
+
 Route::resource('formulaire', 'FormulaireController');
 Route::resource('test', 'TestController');
 Route::resource('devis', 'TestController');

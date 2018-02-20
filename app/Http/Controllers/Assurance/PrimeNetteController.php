@@ -9,7 +9,24 @@
 namespace LiiarAuto\Http\Controllers\Assurance;
 
 
-class PrimeNetteController
+use LiiarAuto\Http\Controllers\Controller;
+
+class PrimeNetteController extends Controller
 {
+    protected $primeBrutes;
+    protected $primeFractionnees;
+
+    public function __construct()
+    {
+        $this->primeBrutes=new PrimesBrutesController();
+        $this->primeFractionnees=new PrimesFractionneesController();
+    }
+
+
+    public function primeNette($categorie, $puissance, $energie, $chargeUtile, $nbPersonnes, $zone,$conduite=null,$profession=null)
+    {
+        $rc=$this->primeBrutes-responsabiliteCivile($categorie, $puissance, $energie, $chargeUtile, $nbPersonnes, $zone,$conduite=null,$profession=null);
+
+    }
 
 }

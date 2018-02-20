@@ -18,10 +18,8 @@
       @include('includes.header')
     </header>
 
-    <div class="row" style="height: auto ">
-        <aside id="fh5co-hero" class="js-fullheight" style="height: 300px;">
-                @include('includes.sidebar')
-        </aside>
+    <div class="fh5co-heading" style="width: 100%">
+        @include('includes.carousel')
     </div>
 
     @yield("content")
@@ -45,7 +43,11 @@
 <script src="js/jquery.flexslider-min.js"></script>
 
 <!-- MAIN JS -->
+<script src="js/script.js"></script>
 <script src="js/main.js"></script>
+
+<script src="js/other.js"></script>
+<script src="js/float.js"></script>
 
 </body>
 

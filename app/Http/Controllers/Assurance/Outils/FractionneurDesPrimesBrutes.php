@@ -28,7 +28,7 @@ class FractionneurDesPrimesBrutes extends Controller
      */
     public function defenseEtRecours($categorie, $puissance, $energie, $chargeUtile, $nbPersonnes, $zone, $nbMois)
     {
-        $rcCat01 = $this->devis->rcCat01($categorie, $puissance, $energie, $chargeUtile, $nbPersonnes, $zone);
+        $rcCat01 = $this->primesBrutes->rcCat01($categorie, $puissance, $energie, $chargeUtile, $nbPersonnes, $zone);
         $fractionPrime = $this->devis->fractionPrime($nbMois);
 
         $rc = $this->rC($rcCat01, $nbMois);
